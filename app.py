@@ -135,7 +135,7 @@ elif menu == "✍️ Submissão de Trabalhos":
         * **Alinhamento:** Justificado.
         * **Título:** Alinhado à esquerda, em caixa alta e negrito.
         * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
-        * **Instituição:** 1;2Pontifícia Universidade Católica de Goiás.
+        * **Instituição:** 1;2 Pontifícia Universidade Católica de Goiás.
         """)
         * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
         
