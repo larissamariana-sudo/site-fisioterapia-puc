@@ -31,7 +31,7 @@ if menu == "🏠 Início / Sobre":
     # Se você já colocou a imagem da capa (como explicamos antes), ela pode ficar aqui em cima:
     # st.image("logo_jornada.png.jpg", use_container_width=True)
     
-    st.subheader("Bem-vindo ao Portal de Eventos Científicos da FST (Faculdade de Enfermagem e Fisioterapia) da PUC Goiás")
+    st.subheader("Bem-vindo ao Portal de Eventos Científicos da FST da PUC Goiás")
     
     st.write("""
         Este portal foi desenvolvido para centralizar a gestão acadêmica e científica do nosso curso. 
@@ -51,7 +51,7 @@ if menu == "🏠 Início / Sobre":
 elif menu == "🎟️ Inscrições (Eventos)":
     st.subheader("🎟️ Inscrição na Jornada Científica do Curso de Fisioterapia")
     st.write("""
-        As inscrições no evento para banca examinadora, estudantes e docentes da PUC Goiás, é gratuita.
+        **As inscrições no evento para banca examinadora, estudantes e docentes da PUC Goiás, é gratuita.**
         
         As inscrições no evento para externos (estudantes, docentes e profissionais - categorias extenas) é confirmada após o pagamento da taxa de inscrição e envio do comprovante de pagamento através do formulário integrado.
     """)    
