@@ -28,9 +28,6 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
-    # Se você já colocou a imagem da capa (como explicamos antes), ela pode ficar aqui em cima:
-    # st.image("logo_jornada.png.jpg", use_container_width=True)
-    
     st.subheader("Bem-vindo ao Portal de Eventos Científicos da FST da PUC Goiás")
     
     st.write("""
@@ -51,26 +48,22 @@ if menu == "🏠 Início / Sobre":
 elif menu == "🎟️ Inscrições (Eventos)":
     st.subheader("🎟️ Inscrição na Jornada Científica do Curso de Fisioterapia")
     st.write("""
-       
-        **As inscrições no evento para banca examinadora, estudantes e docentes da PUC Goiás, é GRATUITA.**
+        **As inscrições no evento para banca examinadora, estudantes e docentes da PUC Goiás, são GRATUITAS.**
         
-        As inscrições no evento para externos (estudantes, docentes e profissionais - categorias extenas) é confirmada após o pagamento da taxa de inscrição e envio do comprovante de pagamento através do formulário integrado.
+        As inscrições no evento para externos (estudantes, docentes e profissionais - categorias externas) são confirmadas após o pagamento da taxa de inscrição e envio do comprovante de pagamento através do formulário integrado.
     """)    
     st.write("")
     
-    # BOTÃO LINK PARA O GOOGLE FORMS
-    # (Substitua o link entre parênteses pelo link real do seu Google Forms)
     st.link_button("🔗 Clique aqui para preencher o formulário oficial de inscrição", "https://forms.gle/4bSypbzykj1FEpR4A")
     
     st.write("")
     st.caption("Após o envio pelo formulário, sua inscrição será processada e registrada automaticamente no sistema da organização.")
 
-# --- 3. SUBMISSÃO DE TRABALHOS (COM INSTRUÇÕES COMPLETAS) ---
+# --- 3. SUBMISSÃO DE TRABALHOS ---
 elif menu == "✍️ Submissão de Trabalhos":
     st.subheader("✍️ Central de Submissão de Trabalhos Científicos")
     st.write("Consulte abaixo as normas e instruções para cada modalidade antes de realizar o envio do seu arquivo.")
     
-    # Abas de Instruções para cada modalidade
     tab_simples, tab_expandido, tab_completo = st.tabs(["📄 Resumo Simples", "📑 Resumo Expandido", "📚 Artigo Completo"])
     
     with tab_simples:
@@ -83,182 +76,49 @@ elif menu == "✍️ Submissão de Trabalhos":
         
         **INFORMAÇÕES PARA A SUBMISSÃO**
         
-        **Formato:** Todos os trabalhos (resumos ou artigos completos) devem ser submetidos obrigatoriamente em arquivo formato WORD.
+        **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
         
-        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial. Trabalhos enviados fora do prazo não serão considerados.
-       
-        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas, sendo os Anais devidamente registrados com ISBN.
+        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
         
-        **DOI (Opcional):** Autores que desejarem maior rastreabilidade e indexação para seu trabalho podem optar pela aquisição do registro de DOI, conforme orientações disponíveis no formulário de submissão.
+        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
+        
+        **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
         
         **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
         
-        **Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
-        
-        **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
-        
-        **Alinhamento:** Justificado.
-              
-        **Título:** Alinhado à esquerda, em caixa alta e negrito.
-        
-        **Autores:** primeiro nome (acadêmico); segundo nome (orientador)
-        
-        **Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
-        
-        **Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
-        
-        **Palavras-chave:** Três termos, separados por ponto e vírgula.
-        
-        **INSTRUÇÕES PARA A SUBMISSÃO DE RESUMO SIMPLES**
-        
-        **Título:** Deve ser claro e informativo, refletindo o conteúdo do trabalho.
-        
-        **Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho.
-        
-        **Autores; Instituição e Contato:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2. Insira o nome completo, sem abreviações e um e-mail válido para contato.
-       
-        **Estrutura:** O resumo deve seguir a estrutura obrigatória de: Introdução, Objetivo, Metodologia, Resultados, Conclusão. 
-        
-        **Formatação:** O nome de cada tópico (Introdução, Objetivo, etc.) deve ser seguido de dois pontos (ex.: Introdução:).
+        * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        * **Alinhamento:** Justificado.
+        * **Título:** Alinhado à esquerda, em caixa alta e negrito.
+        * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
+        * **Instituição:** 1;2Pontifícia Universidade Católica de Goiás.
         """)
         st.info("💡 Ideal para resumos de trabalhos que exigem ineditismo, relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
 
     with tab_expandido:
-  st.markdown("### Normas para Submissão de Resumo Expandido")
+        st.markdown("### Normas para Submissão de Resumo Expandido")
         st.write("""
-        * **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, Conclusão e Referências Bibliográficas.
-        * **Palavras-chave:** De 3 a 5 palavras-chave separadas por ponto e vírgula.
-        * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
-        
-        **INFORMAÇÕES PARA A SUBMISSÃO**
-        
-        **Formato:** Todos os trabalhos (resumos ou artigos completos) devem ser submetidos obrigatoriamente em arquivo formato WORD.
-        
-        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial. Trabalhos enviados fora do prazo não serão considerados.
-       
-        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas, sendo os Anais devidamente registrados com ISBN.
-        
-        **DOI (Opcional):** Autores que desejarem maior rastreabilidade e indexação para seu trabalho podem optar pela aquisição do registro de DOI, conforme orientações disponíveis no formulário de submissão.
-        
-        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-        
-        **Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
-        
-        **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
-        
-        **Alinhamento:** Justificado.
-              
-        **Título:** Alinhado à esquerda, em caixa alta e negrito.
-        
-        **Autores:** primeiro nome (acadêmico); segundo nome (orientador)
-        
-        **Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
-        
-        **Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
-        
-        **Palavras-chave:** Três termos, separados por ponto e vírgula.
-        
-        **INSTRUÇÕES PARA A SUBMISSÃO DE RESUMO EXPANDIDO**
-        
-        **Título:** Deve ser claro e informativo, refletindo o conteúdo do trabalho.
-        
-        **Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho.
-        
-        **Autores; Instituição e Contato:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2. Insira o nome completo, sem abreviações e um e-mail válido para contato.
-       
-        **Estrutura:** O resumo deve seguir a estrutura obrigatória de: Resumo; Palavras-chave; Introdução; Metodologia; Resultados e Discussão; Conclusão; Referências Bibliográficas. 
-
-        **Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho. 
-
-        **Extensão do resumo:** O resumo expandido deve ter no mínimo 4 páginas e no máximo 7 páginas completas, para que o trabalho seja aceito nos Anais da Jornada Científica do Curso de Fisioterapia da PUC Goiás.
-
-        **Formato de envio:** O resumo deve ser enviado em formato WORD.
-
-        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-
-        **Fonte:** Times New Roman, tamanho 12.
-
-        **Espaçamento entre linhas:** 1,0.
-
-        **Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
-
-        **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
-
-        **Alinhamento:** Justificado.
-
-        **Recuo de parágrafo:** 1,25 cm.
-
-        **Título:** Alinhado à esquerda, em caixa alta e negrito.
-
-        **Autores:** primeiro nome (acadêmico); segundo nome (orientador)
-
-        **Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
-
-        **Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
-
-        **Palavras-chave:** Três termos, separados por ponto e vírgula.
-
-        **Citações:** Devem seguir a norma ABNT NBR 10520:2023 (Ex: Oliveira, 2023).
-        **Referências:** De acordo com ABNT NBR 6023:2023, em ordem alfabética ao final do texto e alinhadas à esquerda.
-        
-        **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos (gráficos, tabelas ou imagens) inseridos no corpo do texto.
+        * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
+        * **Extensão:** No mínimo 4 páginas e no máximo 7 páginas completas.
+        * **Formatação:** Fonte Times New Roman, tamanho 12, espaçamento entre linhas 1,0, recuo de parágrafo de 1,25 cm.
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        * **Citações e Referências:** Devem seguir as normas da ABNT (NBR 10520:2023 e NBR 6023:2023).
+        * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
         """)
-        st.info("💡 Indicado para artigos científicos, trabalhos acadêmicos finalizados, pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
+        st.info("💡 Indicado para artigos científicos e pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
 
     with tab_completo:
         st.markdown("### Normas para Submissão de Artigo Completo")
         st.write("""
-        **INFORMAÇÕES PARA A SUBMISSÃO**
-        
-        **Formato:** Todos os trabalhos (resumos ou artigos completos) devem ser submetidos obrigatoriamente em arquivo formato WORD.
-
-        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial. Trabalhos enviados fora do prazo não serão considerados.
-
-        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas, sendo os anais devidamente registrados com ISBN.
-
-        **DOI (Opcional):** Autores que desejarem maior rastreabilidade e indexação para seu trabalho podem optar pela aquisição do registro de DOI, conforme orientações disponíveis no formulário de submissão.
-        
-        **INSTRUÇÕES PARA A SUBMISSÃO DE ARTIGO COMPLETO**
-        
-**Estrutura:** O artigo deve seguir a estrutura obrigatória de: Resumo; Palavras-chave; Introdução; Metodologia; Resultados e Discussão; Conclusão; Referências Bibliográficas. 
-
-**Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho. 
-
-**Extensão do resumo:** O artigo deve ter no mínimo 8 páginas e no máximo 16 páginas completas, para que o trabalho seja aceito nos Anais da Jornada Científica do Curso de Fisioterapia da PUC Goiás.
-
-**Formato de envio:** O artigo deve ser enviado em formato WORD.
-
-**INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-
-**Fonte:** Times New Roman, tamanho 12.
-
-**Espaçamento entre linhas:** 1,0.
-
-**Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
-
-**Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
-
-**Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, Conclusão e Referências Bibliográficas.
-
-**Alinhamento:** Justificado.
-
-**Recuo de parágrafo:** 1,25 cm.
-
-**Título:** Alinhado à esquerda, em caixa alta e negrito.
-
-**Autores:** primeiro nome (acadêmico); segundo nome (orientador)
-
-**Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
-
-**Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
-
-**Palavras-chave:** Três termos, separados por ponto e vírgula.
-
-**Citações:** Devem seguir a norma ABNT NBR 10520:2023 (Ex: Oliveira, 2023).
-**Referências:** De acordo com ABNT NBR 6023:2023, em ordem alfabética ao final do texto e alinhadas à esquerda.
-        
-**Figuras e Tabelas:** Permitido até 2 elementos ilustrativos (gráficos, tabelas ou imagens) inseridos no corpo do texto.
+        * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
+        * **Extensão:** No mínimo 8 páginas e no máximo 16 páginas completas.
+        * **Formatação:** Fonte Times New Roman, tamanho 12, espaçamento entre linhas 1,0, recuo de parágrafo de 1,25 cm.
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        * **Citações e Referências:** Devem seguir as normas da ABNT (NBR 10520:2023 e NBR 6023:2023).
+        * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
         """)
+
+    st.markdown("---")
     
     with st.form("form_submissao_trabalho"):
         modalidade = st.selectbox("Selecione a Modalidade de Submissão:", [
@@ -277,7 +137,7 @@ elif menu == "✍️ Submissão de Trabalhos":
             "Fisioterapia Neurológica e Pediátrica",
             "Saúde da Mulher, Pélvica e Oncológica",
             "Saúde Coletiva, Políticas Públicas e Inovação em Saúde",
-            "Tecnologias Digitais e Inteligência Artificial na Saúde"            
+            "Tecnologias Digitais e Inteligência Artificial na Saúde",
             "Outras Áreas"
         ])
         
