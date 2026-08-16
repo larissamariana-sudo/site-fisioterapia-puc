@@ -57,7 +57,7 @@ elif menu == "🎟️ Inscrições (Eventos)":
         
         nome_insc = st.text_input("Nome Completo")
         email_insc = st.text_input("E-mail Institucional ou de Contato")
-        vinculo = st.selectbox("Vínculo com a Instituição", ["Estudante - PUC Goiás", "Docente - PUC Goiás", "Estudante Externo", "Docente Externo", "Profissional"])
+        vinculo = st.selectbox("Vínculo com a Instituição", ["Estudante - PUC Goiás", "Docente - PUC Goiás", "Banca Examinadora", "Estudante Externo", "Docente Externo", "Profissional"])
         
         # Lógica visual condicional se for evento pago
         if "Pago" in evento_escolhido:
@@ -67,10 +67,11 @@ elif menu == "🎟️ Inscrições (Eventos)":
         btn_inscrever = st.form_submit_button("Confirmar Inscrição")
         if btn_inscrever:
             if nome_insc and email_insc:
-                st.success(f"Inscrição realizada com sucesso para: **{evento_escolhido}**! Um e-mail de confirmação foi disparado.")
+                # CORREÇÃO AQUI: Agora exibe o evento e o vínculo corretamente selecionado
+                st.success(f"Inscrição realizada com sucesso! \n\n- **Evento:** {evento_escolhido}\n- **Vínculo:** {vinculo}\n- **Status:** Registrado no sistema (Comprovante simulado na tela).")
             else:
                 st.error("Preencha todos os campos obrigatórios.")
-
+                
 # --- 3. SUBMISSÃO DE RESUMOS EM DIFERENTES CATEGORIAS ---
 elif menu == "✍️ Submissão de Resumos de Trabalhos":
     st.subheader("✍️ Submissão de Trabalhos Científicos/Resumo Expandido")
