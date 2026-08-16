@@ -99,7 +99,7 @@ elif menu == "🎟️ Eventos e Inscrições":
     elif "Simpósio" in evento_selecionado:
         st.markdown("### 📊 Debate Saúde Coletiva e Políticas Públicas")
         st.write("""
-        8 **Encerradas as inscrições**
+        * **Encerradas as inscrições**
         * **Foco:** Mesas-redondas e debates sobre o SUS e gestão em saúde.
         * **Investimento:** Gratuito.
         """)
