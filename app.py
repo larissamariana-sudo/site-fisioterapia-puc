@@ -77,9 +77,33 @@ elif menu == "✍️ Submissão de Trabalhos":
         st.markdown("### Normas para Submissão de Resumo Simples")
         st.write("""
         * **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, e Considerações Finais.
-        * **Formatação:** Mínimo de 250 palavras e Máximo de 350 palavras (excluindo título e referências). Fonte Times New Roman, tamanho 12, espaçamento 1,5.
+        * **Formatação:** Mínimo de 250 palavras e Máximo de 350 palavras (excluindo título e referências). Fonte Times New Roman, tamanho 12, espaçamento 1,0.
         * **Palavras-chave:** De 3 a 5 palavras-chave separadas por ponto e vírgula.
         * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
+        
+        **PROCESSO DE SUBMISSÃO**
+        **Formato:** Todos os trabalhos (resumos ou artigos completos) devem ser submetidos obrigatoriamente em arquivo formato WORD.
+        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial. Trabalhos enviados fora do prazo não serão considerados.
+        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas, sendo os Anais devidamente registrados com ISBN.
+        **DOI (Opcional):** Autores que desejarem maior rastreabilidade e indexação para seu trabalho podem optar pela aquisição do registro de DOI, conforme orientações disponíveis no formulário de submissão.
+        
+        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
+        **Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+        **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        **Alinhamento:** Justificado.
+        **Recuo de parágrafo:** 1,25 cm.
+        **Título:** Alinhado à esquerda, em caixa alta e negrito.
+        **Autores:** primeiro nome (acadêmico); segundo nome (orientador)
+        **Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
+        **Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
+        **Palavras-chave:** Três termos, separados por ponto e vírgula.
+        
+        **INSTRUÇÕES PARA A SUBMISSÃO DE RESUMO SIMPLES**
+        **Título:** Deve ser claro e informativo, refletindo o conteúdo do trabalho.
+        **Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho.
+        Autores; Instituição e Contato:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2. Insira o nome completo, sem abreviações e um e-mail válido para contato.
+        **Estrutura:** O resumo deve seguir a estrutura obrigatória de: Introdução, Objetivo, Metodologia, Resultados, Conclusão. 
+        **Formatação:** O nome de cada tópico (Introdução, Objetivo, etc.) deve ser seguido de dois pontos (ex.: Introdução:).
         """)
         st.info("💡 Ideal para resumos de trabalhos que exigem ineditismo, relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
 
