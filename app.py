@@ -43,7 +43,15 @@ elif menu == "🎟️ Inscrições (Eventos)":
     st.write("""
         * **Estudantes, Docentes e Banca da PUC Goiás:** Inscrição totalmente **Gratuita**.
         * **Participantes Externos (Estudantes, Docentes e Profissionais):** Inscrição **Paga (R$ 10,00)**. 
-        
+        * **Possibilidade de submissão de resumos simples/resumos expandidos/artigos completos com **ISBN GRATUITO**
+        * **EIXOS TEMÁTICOS**
+            "Fisioterapia Ortopédica, Reumatológica, Traumatológica e Desportiva",
+            "Fisioterapia em Terapia Intensiva e Cardiorrespiratória",
+            "Fisioterapia Neurológica e Pediátrica",
+            "Saúde da Mulher, Pélvica e Oncológica",
+            "Saúde Coletiva, Políticas Públicas e Inovação em Saúde",
+            "Tecnologias Digitais e Inteligência Artificial na Saúde"
+            
         ⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby (Aguardando Confirmação)** até que a equipe financeira valide o comprovante de PIX enviado no formulário em relação à chave: `eventoscientificospucgoias@hotmail.com`.
     """)
     st.write("")
