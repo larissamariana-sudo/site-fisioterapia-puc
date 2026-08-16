@@ -43,7 +43,7 @@ elif menu == "🎟️ Inscrições (Eventos)":
     st.write("""
         * **Estudantes, Docentes e Banca da PUC Goiás:** Inscrição totalmente **Gratuita**.
         * **Participantes Externos (Estudantes, Docentes e Profissionais):** Inscrição **Paga (R$ 10,00)**. 
-        * **Possibilidade de submissão de resumos simples/resumos expandidos/artigos completos com **ISBN GRATUITO**
+        * **Possibilidade de submissão de resumos simples/resumos expandidos/artigos completos com ISBN GRATUITO**
         * **EIXOS TEMÁTICOS**
             "Fisioterapia Ortopédica, Reumatológica, Traumatológica e Desportiva",
             "Fisioterapia em Terapia Intensiva e Cardiorrespiratória",
