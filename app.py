@@ -126,14 +126,15 @@ elif menu == "✍️ Submissão de Trabalhos":
     with tab_expandido:
         st.markdown("### Normas para Submissão de Resumo Expandido")
         st.write("""
-        **INFORMAÇÕES PARA A SUBMISSÃO**
+        
+         **INFORMAÇÕES PARA A SUBMISSÃO**
         
         **Formato:** Todos os trabalhos (resumos ou artigos completos) devem ser submetidos obrigatoriamente em arquivo formato WORD.
-
+        
         **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial. Trabalhos enviados fora do prazo não serão considerados.
-
-        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas, sendo os anais devidamente registrados com ISBN.
-
+       
+        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas, sendo os Anais devidamente registrados com ISBN.
+        
         **DOI (Opcional):** Autores que desejarem maior rastreabilidade e indexação para seu trabalho podem optar pela aquisição do registro de DOI, conforme orientações disponíveis no formulário de submissão.
         
         **INSTRUÇÕES PARA A SUBMISSÃO DE RESUMO EXPANDIDO**
