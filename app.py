@@ -137,7 +137,6 @@ elif menu == "✍️ Submissão de Trabalhos":
         * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
         * **Instituição:** 1;2Pontifícia Universidade Católica de Goiás.
         """)
-
         * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
         
         * **Extensão:** No mínimo 4 páginas e no máximo 7 páginas completas.
