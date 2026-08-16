@@ -149,28 +149,48 @@ elif menu == "🔍 Consultar Status do Trabalho":
                 st.markdown("---")
                 st.info(f"🔎 Buscando parecer para o e-mail: **{email_busca}**")
                 
-                # --- SIMULAÇÃO DA CONSULTA REAL DO BANCO DE DADOS/PLANILHA ---
-                # (Aqui o sistema simula a leitura do status que o administrador preencheu na planilha)
-                
-                # Exemplo de lógica de status:
-                # Na prática, você integrará a planilha via biblioteca 'pandas', mas visualmente funcionará assim:
-                
-                status_trabalho = "Correções"  # <--- É este valor que a planilha trará automaticamente do seu controle!
-                
-                if status_trabalho == "Em Análise":
-                    st.warning("⏳ **Status Atual:** Recebido / Em Análise pela Banca Científica.")
-                    st.write("Seu trabalho foi entregue e está passando pela avaliação dos pares. Acompanhe seu e-mail.")
+                try:
+                    import pandas as pd
                     
-                elif status_trabalho == "Aprovado":
-                    st.success("🎉 **Status Atual:** APROVADO!")
-                    st.write("Parabéns! Seu trabalho foi aceito para apresentação e publicação nos Anais oficiais do evento.")
+                    # ⚠️ COLE AQUI O LINK CSV DA SUA PLANILHA ENTRE AS ASPAS:
+                    url_planilha = "https://docs.google.com/spreadsheets/d/1wBmZZI6-6WwmrrNsb0L6d2-iyPCZ2WGQUM1xzsylBu8/edit?usp=sharing"
                     
-                elif status_trabalho == "Correções":
-                    st.error("⚠️ **Status Atual:** Solicitação de Alterações Pendentes.")
-                    st.markdown("""
-                    O comitê científico revisou seu trabalho e solicitou ajustes estruturais ou textuais. 
-                    * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.
-                    """)
+                    # Lê os dados da planilha do Google automaticamente
+                    df = pd.read_csv(url_planilha)
+                    
+                    # Padroniza os nomes das colunas e e-mails para evitar erros de digitação (maiúsculas/minúsculas)
+                    df.columns = df.columns.str.strip().str.capitalize()
+                    df['E-mail'] = df['E-mail'].astype(str).str.strip().str.lower()
+                    
+                    # Procura o e-mail digitado na planilha
+                    resultado = df[df['E-mail'] == email_busca]
+                    
+                    if not resultado.empty:
+                        # Pega o status escrito pelo administrador na planilha
+                        status_trabalho = str(resultado.iloc[0]['Status']).strip().capitalize()
+                        
+                        # Exibe a mensagem de acordo com o status real da planilha
+                        if "Análise" in status_trabalho or "Em análise" in status_trabalho:
+                            st.warning("⏳ **Status Atual:** Recebido / Em Análise pela Banca Científica.")
+                            st.write("Seu trabalho foi entregue e está passando pela avaliação dos pares. Acompanhe seu e-mail.")
+                            
+                        elif "Aprovado" in status_trabalho:
+                            st.success("🎉 **Status Atual:** APROVADO!")
+                            st.write("Parabéns! Seu trabalho foi aceito para apresentação e publicação nos Anais oficiais do evento.")
+                            
+                        elif "Correções" in status_trabalho or "Correção" in status_trabalho:
+                            st.error("⚠️ **Status Atual:** Solicitação de Alterações Pendentes.")
+                            st.markdown("""
+                            O comitê científico revisou seu trabalho e solicitou ajustes estruturais ou textuais. 
+                            * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.
+                            """)
+                        else:
+                            st.info(f"📌 **Status Atual:** {status_trabalho}")
+                    else:
+                        st.warning("Nenhum trabalho encontrado para este e-mail. Verifique se digitou o mesmo e-mail utilizado no momento da submissão.")
+                        
+                except Exception as e:
+                    st.error("Erro ao conectar com a base de dados do evento. Certifique-se de que o link da planilha foi inserido corretamente no código.")
             else:
                 st.error("Por favor, digite um e-mail válido para realizar a consulta.")
 
