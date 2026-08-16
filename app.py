@@ -42,7 +42,7 @@ elif menu == "🎟️ Inscrições (Eventos)":
     st.subheader("🎟️ Inscrição na Jornada Científica do Curso de Fisioterapia")
     st.write("""
         * **Estudantes, Docentes e Banca da PUC Goiás:** Inscrição totalmente **Gratuita**.
-        * **Participantes Externos (Estudantes, Docentes e Profissionais):** Inscrição **Paga (R$ 5,00 a R$ 10,00)**. 
+        * **Participantes Externos (Estudantes, Docentes e Profissionais):** Inscrição **Paga (R$ 10,00)**. 
         
         ⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby (Aguardando Confirmação)** até que a equipe financeira valide o comprovante de PIX enviado no formulário em relação à chave: `eventoscientificospucgoias@hotmail.com`.
     """)
