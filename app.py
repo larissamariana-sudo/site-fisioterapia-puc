@@ -78,8 +78,9 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.caption("Após o envio, sua inscrição será processada pela organização.")
         
     elif "Minicurso Prático" in evento_selecionado:
-        st.markdown("### 🤲 Minicurso Prático: Reabilitação e Terapia Manual" **Encerrado; em breve nova turma**)
+        st.markdown("### 🤲 Minicurso Prático: Reabilitação e Terapia Manual")
         st.write("""
+        * **Encerrado; em breve nova turma**
         * **Carga Horária:** 4 horas práticas.
         * **Investimento:** R$ 30,00 (Vagas limitadas). Pagamento via PIX para `eventoscientificospucgoias@hotmail.com`.
         * **Certificação:** Certificado emitido pela Pró-Reitoria de Extensão da PUC Goiás.
@@ -87,16 +88,18 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.link_button("🔗 Inscrever-se no Minicurso Prático", "https://forms.gle/SEU_LINK_DO_MINICURSO_AQUI")
         
     elif "Workshop" in evento_selecionado:
-        st.markdown("### 💡 Workshop: Inovação e Tecnologias em Saúde" **Em breve**)
+        st.markdown("### 💡 Workshop: Inovação e Tecnologias em Saúde")
         st.write("""
+        * **Em breve**
         * **Foco:** Discussão sobre inteligência artificial, teleatendimento e novas tecnologias reabilitadoras.
         * **Investimento:** Gratuito para toda a comunidade acadêmica.
         """)
         st.link_button("🔗 Inscrever-se no Workshop", "https://forms.gle/SEU_LINK_DO_WORKSHOP_AQUI")
         
     elif "Simpósio" in evento_selecionado:
-        st.markdown("### 📊 Debate Saúde Coletiva e Políticas Públicas" **Encerradas as inscrições**)
+        st.markdown("### 📊 Debate Saúde Coletiva e Políticas Públicas")
         st.write("""
+        8 **Encerradas as inscrições**
         * **Foco:** Mesas-redondas e debates sobre o SUS e gestão em saúde.
         * **Investimento:** Gratuito.
         """)
