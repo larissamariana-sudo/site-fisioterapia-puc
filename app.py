@@ -28,19 +28,24 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
-    st.subheader("Sobre o Portal Acadêmico")
-    st.write("Bem-vindo à plataforma de gestão acadêmica e científica para eventos da PUC Goiás.")
-        st.write("Bem-vindo ao Portal de Eventos Científicos FST PUC Goiás. Este portal foi desenvolvido para centralizar a gestão acadêmica e científica dos eventos dos cursos.
-       Aqui, estudantes, professores, pesquisadores e profissionais encontram um espaço integrado para: 
-Inscrições em jornadas, simpósios, palestras e minicursos;
-
-Submissão de Trabalhos (Resumos Simples, Expandidos e Artigos Completos) divididos por eixos temáticos;
-
-Repositório Oficial de Anais com edições anteriores publicadas com ISBN.
-
-Emissão Opcional de DOI Individual para artigos aprovados, garantindo maior visibilidade acadêmica (Lattes e Pós-Graduação);
-
-Navegue pelo menu lateral para realizar suas inscrições, conferir as normas vigentes e acompanhar a programação dos nossos eventos!")
+    # Se você já colocou a imagem da capa (como explicamos antes), ela pode ficar aqui em cima:
+    # st.image("logo_puc.png", use_container_width=True)
+    
+    st.subheader("Bem-vindo ao Portal de Eventos Científicos da FST (Faculdade de Enfermagem e Fisioterapia) da PUC Goiás")
+    
+    st.write("""
+        Este portal foi desenvolvido para centralizar a gestão acadêmica e científica do nosso curso. 
+        Aqui, estudantes, professores, pesquisadores e profissionais encontram um espaço integrado para:
+    """)
+    
+    st.markdown("""
+    * **Inscrições** em jornadas, simpósios, palestras e minicursos;
+    * **Submissão de Trabalhos** (Resumos Simples, Expandidos e Artigos Completos) divididos por eixos temáticos;
+    * **Emissão Opcional de DOI Individual** para artigos aprovados, garantindo maior visibilidade acadêmica (Lattes e Pós-Graduação);
+    * **Repositório Oficial de Anais** com edições anteriores publicadas com ISBN.
+    """)
+    
+    st.info("💡 **Navegue pelo menu lateral** para realizar suas inscrições, conferir as normas vigentes e acompanhar a programação dos nossos eventos!")
 
 # --- 2. INSCRIÇÕES ---
 elif menu == "🎟️ Inscrições (Eventos)":
