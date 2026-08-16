@@ -178,7 +178,7 @@ elif menu == "✍️ Submissão de Trabalhos":
         st.info("💡 Indicado para artigos científicos, trabalhos acadêmicos finalizados, pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
 
     with tab_completo:
-               st.markdown("### Normas para Submissão de Artigo Completo")
+        st.markdown("### Normas para Submissão de Artigo Completo")
         st.write("""
         **INFORMAÇÕES PARA A SUBMISSÃO**
         
