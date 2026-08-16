@@ -29,7 +29,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
     # Se você já colocou a imagem da capa (como explicamos antes), ela pode ficar aqui em cima:
-    # st.image("logo_puc.png", use_container_width=True)
+    # st.image("logo_jornada.png.jpg", use_container_width=True)
     
     st.subheader("Bem-vindo ao Portal de Eventos Científicos da FST (Faculdade de Enfermagem e Fisioterapia) da PUC Goiás")
     
