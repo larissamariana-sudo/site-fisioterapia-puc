@@ -152,10 +152,10 @@ elif menu == "🔍 Consultar Status do Trabalho":
                 try:
                     import pandas as pd
                     
-                    # 1. Copie o link completo da sua planilha do Google aberta no navegador e cole aqui entre as aspas:
-                    link_planilha = "https://docs.google.com/spreadsheets/d/1wBmZZI6-6WwmrrNsb0L6d2-iyPCZ2WGQUM1xzsylBu8/edit?usp=sharing"
+                    # 1. Cole o link completo da sua planilha do Google entre as aspas abaixo:
+                    link_planilha = "COLE_O_LINK_DA_SUA_PLANILHA_AQUI"
                     
-                    # Converte automaticamente o link normal do Google Sheets para o formato de leitura do sistema
+                    # Converte o link do Google Sheets para o formato de leitura CSV
                     if "/edit" in link_planilha:
                         id_planilha = link_planilha.split("/d/")[1].split("/")[0]
                         url_csv = f"https://docs.google.com/spreadsheets/d/{id_planilha}/export?format=csv"
@@ -165,13 +165,14 @@ elif menu == "🔍 Consultar Status do Trabalho":
                     # Lê os dados da planilha
                     df = pd.read_csv(url_csv)
                     
-                    # Limpa e padroniza os nomes das colunas e e-mails
-                    df.columns = df.columns.str.strip().str.capitalize()
+                    # Mostra no print interno os nomes reais das colunas para ajudar a encontrar se houver erro
+                    colunas_disponiveis = [col.strip().lower() for col in df.columns]
                     
-                    # Procura a coluna de e-mail (aceita 'E-mail', 'Email' ou 'Endereço de e-mail')
+                    # Procura pela coluna de e-mail de forma inteligente
                     coluna_email = None
                     for col in df.columns:
-                        if 'email' in col.lower():
+                        col_limpa = col.strip().lower()
+                        if 'e-mail' in col_limpa or 'email' in col_limpa or 'endereço' in col_limpa:
                             coluna_email = col
                             break
                     
@@ -183,14 +184,15 @@ elif menu == "🔍 Consultar Status do Trabalho":
                             # Procura a coluna de status
                             coluna_status = None
                             for col in df.columns:
-                                if 'status' in col.lower():
+                                col_limpa = col.strip().lower()
+                                if 'status' in col_limpa:
                                     coluna_status = col
                                     break
                             
                             if coluna_status:
                                 status_trabalho = str(resultado.iloc[0][coluna_status]).strip().capitalize()
                                 
-                                # Exibe a mensagem correta baseada no que está escrito na planilha
+                                # Exibe a mensagem correta baseada no status da planilha
                                 if "Análise" in status_trabalho or "Em análise" in status_trabalho:
                                     st.warning("⏳ **Status Atual:** Recebido / Em Análise pela Banca Científica.")
                                     st.write("Seu trabalho foi entregue e está passando pela avaliação dos pares. Acompanhe seu e-mail.")
@@ -208,14 +210,14 @@ elif menu == "🔍 Consultar Status do Trabalho":
                                 else:
                                     st.info(f"📌 **Status Atual:** {status_trabalho}")
                             else:
-                                st.error("Atenção: Não foi encontrada nenhuma coluna chamada 'Status' na sua planilha do Google.")
+                                st.error("Atenção: Não foi encontrada nenhuma coluna chamada 'Status' na sua planilha. Certifique-se de criar uma coluna com o nome exato 'Status'.")
                         else:
                             st.warning("Nenhum trabalho encontrado para este e-mail. Verifique se digitou o mesmo e-mail utilizado no momento da submissão.")
                     else:
-                        st.error("Não foi possível identificar a coluna de e-mail na sua planilha.")
+                        st.error(f"Não foi possível identificar a coluna de e-mail. Colunas encontradas na sua planilha: {list(df.columns)}")
                         
                 except Exception as e:
-                    st.error("Erro ao ler a planilha. Certifique-se de que a planilha está compartilhada como 'Qualquer pessoa com o link pode ser leitor'.")
+                    st.error(f"Erro ao ler a planilha: {e}. Certifique-se de que a planilha está compartilhada como 'Qualquer pessoa com o link pode ser leitor'.")
             else:
                 st.error("Por favor, digite um e-mail válido para realizar a consulta.")
 
