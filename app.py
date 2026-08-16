@@ -36,7 +36,8 @@ elif menu == "🎟️ Inscrições (Eventos)":
     
     with st.form("form_inscricao"):
         evento_escolhido = st.selectbox("Selecione o Evento:", [
-            "Jornada Científica - Fisioterapia (Gratuito - Estudante/Docente, Pago - Profissional/Externo)", 
+            "Jornada Científica - Fisioterapia (Gratuito - Estudante/Docente PUC Goiás/Banca Examinadora)", 
+            "Jornada Científica - Fisioterapia (Pago - Estudante/Docente/Profissional/Externo)", 
             "Minicurso Prático: Massagem Terapêutica (Pago)"
         ])
         
