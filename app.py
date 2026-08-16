@@ -153,7 +153,7 @@ elif menu == "🔍 Consultar Status do Trabalho":
                     import pandas as pd
                     
                     # 1. Cole o link completo da sua planilha do Google entre as aspas abaixo:
-                    link_planilha = "COLE_O_LINK_DA_SUA_PLANILHA_AQUI"
+                    link_planilha = "https://docs.google.com/spreadsheets/d/1wBmZZI6-6WwmrrNsb0L6d2-iyPCZ2WGQUM1xzsylBu8/edit?usp=sharing"
                     
                     # Converte o link do Google Sheets para o formato de leitura CSV
                     if "/edit" in link_planilha:
