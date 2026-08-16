@@ -29,7 +29,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 if menu == "🏠 Início / Sobre":
     st.subheader("Sobre o Portal Acadêmico")
     st.write("""
-        Bem-vindo à plataforma de gestão acadêmica e científica do curso de Fisioterapia da 
+        Bem-vindo à plataforma de gestão acadêmica e científica para eventos, cursos, minicursos FST
         **Pontifícia Universidade Católica de Goiás (PUC Goiás)**. Este portal centraliza:
     """)
     st.markdown("""
@@ -47,14 +47,15 @@ elif menu == "🎟️ Inscrições (Eventos)":
     
     with st.form("form_inscricao"):
         evento_escolhido = st.selectbox("Selecione o Evento:", [
-            "Jornada Científica do Curso de Fisioterapia (Gratuito - Apenas Ouvinte PUC Goiás)", 
-            "Jornada Científica do Curso de Fisioterapia (Pago - R$ 5,00 - Ouvinte Externo)", 
+            "Jornada Científica do Curso de Fisioterapia (Gratuito - Apenas "Estudante PUC Goiás", "Docente - PUC Goiás")", 
+            "Jornada Científica do Curso de Fisioterapia (Pago - R$ 5,00 - "Estudante Externo")", 
+            "Jornada Científica do Curso de Fisioterapia (Pago - R$ 10,00 - "Docente Externo", "Profissional")", 
             "Minicurso Prático: Massagem Terapêutica (Pago - R$ 30,00)", 
         ])
         
         nome_insc = st.text_input("Nome Completo")
         email_insc = st.text_input("E-mail Institucional ou de Contato")
-        vinculo = st.selectbox("Vínculo com a Instituição", ["Estudante Fisioterapia - PUC Goiás", "Estudante Externo", "Profissional / Fisioterapeuta"])
+        vinculo = st.selectbox("Vínculo com a Instituição", ["Estudante - PUC Goiás", "Docente - PUC Goiás", "Estudante Externo", "Docente Externo", "Profissional"])
         
         # Lógica visual condicional se for evento pago
         if "Pago" in evento_escolhido:
@@ -132,8 +133,8 @@ elif menu == "📚 Anais Publicados":
     
     col1, col2 = st.columns([4, 1])
     with col1:
-        st.write("**XX Encontro Científico de Fisioterapia da PUC Goiás (2025)**")
-        st.caption("ISBN: 2358-0000 | Artigos com e sem DOI individual.")
+        st.write("**Jornada Científica do Curso de Fisioterapia da PUC Goiás (2025)**")
+        st.caption("ISBN: 0000-0000 | Artigos com e sem DOI individual.")
     with col2:
         st.button("📥 Baixar Anais", key="download_2025")
 
