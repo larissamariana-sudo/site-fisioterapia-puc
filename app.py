@@ -239,15 +239,16 @@ elif menu == "💳 Taxa de DOI Individual":
 # --- 6. ANAIS ---
 elif menu == "📚 Anais Publicados":
     st.subheader("📚 Repositório Oficial de Anais")
-    st.write("Aqui ficarão disponíveis os cadernos de resumos e anais oficiais do evento assim que forem publicados e indexados com ISBN.")
+    st.write("Acesse abaixo os cadernos de resumos e anais oficiais da Jornada Científica de Fisioterapia da PUC Goiás.")
     st.markdown("---")
     
     col1, col2 = st.columns([4, 1])
     with col1:
         st.write("**Anais da Jornada Científica do Curso de Fisioterapia — PUC Goiás (2026)**")
-        st.caption("Status: Em preparação para publicação pós-evento (ISBN: 0000-0000)")
+        st.caption("Publicado oficialmente | ISBN: 0000-0000 (Exemplo)")
     with col2:
-        st.link_button("📥 Baixar Anais", "#", disabled=True)
+        # Substitua o '#' pelo link público que você copiou do Google Drive:
+        st.link_button("📥 Baixar Anais", "COLE_O_LINK_DO_PDF_DO_DRIVE_AQUI")
 
 # --- RODAPÉ ---
 st.markdown("---")
