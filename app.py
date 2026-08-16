@@ -149,10 +149,9 @@ elif menu == "✍️ Submissão de Trabalhos":
 
         * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
         """)
-        
         st.info("💡 Indicado para artigos científicos e pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
         
-    with tab_completo:
+        with tab_completo:
         st.markdown("### Normas para Submissão de Artigo Completo")
         st.write("8 a 16 páginas. Formato Word. Comprovante de Comitê de Ética quando aplicável.")
         
