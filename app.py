@@ -9,7 +9,7 @@ st.set_page_config(
 # --- ESTILIZAÇÃO DO CABEÇALHO ---
 st.markdown("""
     # Para exibir uma imagem centralizada ou ajustada
-st.image("logo_jornada.png", caption="Portal Acadêmico - PUC Goiás", use_container_width=True)
+st.image("logo_jornada.png.jpg", caption="Portal Acadêmico - PUC Goiás", use_container_width=True)
 <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white;'>
         <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Humanidades e Áreas Afins — PUC Goiás</h1>
         <p style='margin:5px 0 0 0; font-size: 15px;'>Portal de Eventos, Submissões, Anais e Certificação DOI</p>
