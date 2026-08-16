@@ -152,45 +152,70 @@ elif menu == "🔍 Consultar Status do Trabalho":
                 try:
                     import pandas as pd
                     
-                    # ⚠️ COLE AQUI O LINK CSV DA SUA PLANILHA ENTRE AS ASPAS:
-                    url_planilha = "https://docs.google.com/spreadsheets/d/1wBmZZI6-6WwmrrNsb0L6d2-iyPCZ2WGQUM1xzsylBu8/edit?usp=sharing"
+                    # 1. Copie o link completo da sua planilha do Google aberta no navegador e cole aqui entre as aspas:
+                    link_planilha = "https://docs.google.com/spreadsheets/d/1wBmZZI6-6WwmrrNsb0L6d2-iyPCZ2WGQUM1xzsylBu8/edit?usp=sharing"
                     
-                    # Lê os dados da planilha do Google automaticamente
-                    df = pd.read_csv(url_planilha)
-                    
-                    # Padroniza os nomes das colunas e e-mails para evitar erros de digitação (maiúsculas/minúsculas)
-                    df.columns = df.columns.str.strip().str.capitalize()
-                    df['E-mail'] = df['E-mail'].astype(str).str.strip().str.lower()
-                    
-                    # Procura o e-mail digitado na planilha
-                    resultado = df[df['E-mail'] == email_busca]
-                    
-                    if not resultado.empty:
-                        # Pega o status escrito pelo administrador na planilha
-                        status_trabalho = str(resultado.iloc[0]['Status']).strip().capitalize()
-                        
-                        # Exibe a mensagem de acordo com o status real da planilha
-                        if "Análise" in status_trabalho or "Em análise" in status_trabalho:
-                            st.warning("⏳ **Status Atual:** Recebido / Em Análise pela Banca Científica.")
-                            st.write("Seu trabalho foi entregue e está passando pela avaliação dos pares. Acompanhe seu e-mail.")
-                            
-                        elif "Aprovado" in status_trabalho:
-                            st.success("🎉 **Status Atual:** APROVADO!")
-                            st.write("Parabéns! Seu trabalho foi aceito para apresentação e publicação nos Anais oficiais do evento.")
-                            
-                        elif "Correções" in status_trabalho or "Correção" in status_trabalho:
-                            st.error("⚠️ **Status Atual:** Solicitação de Alterações Pendentes.")
-                            st.markdown("""
-                            O comitê científico revisou seu trabalho e solicitou ajustes estruturais ou textuais. 
-                            * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.
-                            """)
-                        else:
-                            st.info(f"📌 **Status Atual:** {status_trabalho}")
+                    # Converte automaticamente o link normal do Google Sheets para o formato de leitura do sistema
+                    if "/edit" in link_planilha:
+                        id_planilha = link_planilha.split("/d/")[1].split("/")[0]
+                        url_csv = f"https://docs.google.com/spreadsheets/d/{id_planilha}/export?format=csv"
                     else:
-                        st.warning("Nenhum trabalho encontrado para este e-mail. Verifique se digitou o mesmo e-mail utilizado no momento da submissão.")
+                        url_csv = link_planilha
+                    
+                    # Lê os dados da planilha
+                    df = pd.read_csv(url_csv)
+                    
+                    # Limpa e padroniza os nomes das colunas e e-mails
+                    df.columns = df.columns.str.strip().str.capitalize()
+                    
+                    # Procura a coluna de e-mail (aceita 'E-mail', 'Email' ou 'Endereço de e-mail')
+                    coluna_email = None
+                    for col in df.columns:
+                        if 'email' in col.lower():
+                            coluna_email = col
+                            break
+                    
+                    if coluna_email:
+                        df[coluna_email] = df[coluna_email].astype(str).str.strip().str.lower()
+                        resultado = df[df[coluna_email] == email_busca]
+                        
+                        if not resultado.empty:
+                            # Procura a coluna de status
+                            coluna_status = None
+                            for col in df.columns:
+                                if 'status' in col.lower():
+                                    coluna_status = col
+                                    break
+                            
+                            if coluna_status:
+                                status_trabalho = str(resultado.iloc[0][coluna_status]).strip().capitalize()
+                                
+                                # Exibe a mensagem correta baseada no que está escrito na planilha
+                                if "Análise" in status_trabalho or "Em análise" in status_trabalho:
+                                    st.warning("⏳ **Status Atual:** Recebido / Em Análise pela Banca Científica.")
+                                    st.write("Seu trabalho foi entregue e está passando pela avaliação dos pares. Acompanhe seu e-mail.")
+                                    
+                                elif "Aprovado" in status_trabalho:
+                                    st.success("🎉 **Status Atual:** APROVADO!")
+                                    st.write("Parabéns! Seu trabalho foi aceito para apresentação e publicação nos Anais oficiais do evento.")
+                                    
+                                elif "Correções" in status_trabalho or "Correção" in status_trabalho:
+                                    st.error("⚠️ **Status Atual:** Solicitação de Alterações Pendentes.")
+                                    st.markdown("""
+                                    O comitê científico revisou seu trabalho e solicitou ajustes estruturais ou textuais. 
+                                    * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.
+                                    """)
+                                else:
+                                    st.info(f"📌 **Status Atual:** {status_trabalho}")
+                            else:
+                                st.error("Atenção: Não foi encontrada nenhuma coluna chamada 'Status' na sua planilha do Google.")
+                        else:
+                            st.warning("Nenhum trabalho encontrado para este e-mail. Verifique se digitou o mesmo e-mail utilizado no momento da submissão.")
+                    else:
+                        st.error("Não foi possível identificar a coluna de e-mail na sua planilha.")
                         
                 except Exception as e:
-                    st.error("Erro ao conectar com a base de dados do evento. Certifique-se de que o link da planilha foi inserido corretamente no código.")
+                    st.error("Erro ao ler a planilha. Certifique-se de que a planilha está compartilhada como 'Qualquer pessoa com o link pode ser leitor'.")
             else:
                 st.error("Por favor, digite um e-mail válido para realizar a consulta.")
 
