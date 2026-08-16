@@ -6,7 +6,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- ESTILIZAÇÃO DO CABEÇALHO INSTITUCIONAL ---
+# --- ESTILIZAÇÃO DO CABEÇALHO ---
 st.markdown("""
     <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white;'>
         <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Humanidades e Áreas Afins — PUC Goiás</h1>
@@ -25,122 +25,63 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
     "📚 Anais Publicados"
 ])
 
-# --- 1. INÍCIO / DESCRIÇÃO ---
+# --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
     st.subheader("Sobre o Portal Acadêmico")
-    st.write("""
-        Bem-vindo à plataforma de gestão acadêmica e científica para eventos, cursos, minicursos FST
-        **Pontifícia Universidade Católica de Goiás (PUC Goiás)**. Este portal centraliza:
-    """)
-    st.markdown("""
-    - **Inscrições** em jornadas, simpósios e cursos de extensão;
-    - **Submissão de resumos científicos** divididos por eixos temáticos;
-    - **Publicação de Anais** oficiais com rastreabilidade acadêmica;
-    - **Solicitação opcional de DOI individual** para artigos aprovados.
-    """)
-    st.info("💡 **Destaque Atual:** Esse semestre teremos a Jornada Científica do Curso de Fisioterapia, as inscrições serão realizadas nessa plataforma!")
+    st.write("Bem-vindo à plataforma de gestão acadêmica e científica para eventos da PUC Goiás.")
 
-# --- 2. INSCRIÇÕES PARA EVENTOS ---
+# --- 2. INSCRIÇÕES ---
 elif menu == "🎟️ Inscrições (Eventos)":
-    st.subheader("🎟️ Inscrição em Eventos e Cursos")
-    st.write("Faça sua inscrição para as palestras, mesas-redondas e minicursos.")
+    st.subheader("🎟️ Inscrição em Eventos")
     
     with st.form("form_inscricao"):
         evento_escolhido = st.selectbox("Selecione o Evento:", [
-            "Jornada Científica do Curso de Fisioterapia (Gratuito - Estudante - PUC Goiás)", 
-            "Jornada Científica do Curso de Fisioterapia (Gratuito - Docente - PUC Goiás)", 
-            "Jornada Científica do Curso de Fisioterapia (Gratuito - Banca Examinadora)", 
-            "Jornada Científica do Curso de Fisioterapia (Pago - R$ 5,00 - Estudante Externo)", 
-            "Jornada Científica do Curso de Fisioterapia (Pago - R$ 10,00 - Docente Externo, Profissional)", 
-            "Minicurso Prático: Massagem Terapêutica (Pago - R$ 30,00)", 
+            "Jornada Científica - Fisioterapia (Gratuito - Estudante)", 
+            "Jornada Científica - Fisioterapia (Gratuito - Docente)", 
+            "Jornada Científica - Fisioterapia (Pago - Profissional/Externo)",
+            "Minicurso Prático: Massagem Terapêutica (Pago)"
         ])
         
         nome_insc = st.text_input("Nome Completo")
-        email_insc = st.text_input("E-mail Institucional ou de Contato")
-        vinculo = st.selectbox("Vínculo com a Instituição", ["Estudante - PUC Goiás", "Docente - PUC Goiás", "Banca Examinadora", "Estudante Externo", "Docente Externo", "Profissional"])
-        
-        # Lógica visual condicional se for evento pago
-        if "Pago" in evento_escolhido:
-            st.warning("⚠️ Este evento possui taxa de inscrição. Após enviar os dados, você receberá a chave PIX/boleto no e-mail informado para envio do comprovante.")
-            comprovante_pagamento = st.file_uploader("Enviar Comprovante de Inscrição (PDF/Imagem)", type=["pdf", "png", "jpg"])
+        email_insc = st.text_input("E-mail")
+        vinculo = st.selectbox("Vínculo:", ["Estudante - PUC Goiás", "Docente - PUC Goiás", "Banca Examinadora", "Estudante Externo", "Docente Externo", "Profissional"])
         
         btn_inscrever = st.form_submit_button("Confirmar Inscrição")
+        
         if btn_inscrever:
             if nome_insc and email_insc:
-                # CORREÇÃO AQUI: Agora exibe o evento e o vínculo corretamente selecionado
-                st.success(f"Inscrição realizada com sucesso! \n\n- **Evento:** {evento_escolhido}\n- **Vínculo:** {vinculo}\n- **Status:** Registrado no sistema (Comprovante simulado na tela).")
+                # Aqui exibimos as variáveis que você selecionou nos dois campos
+                st.success(f"Inscrição realizada com sucesso!\n\n**Evento:** {evento_escolhido}\n**Vínculo selecionado:** {vinculo}")
             else:
-                st.error("Preencha todos os campos obrigatórios.")
-                
-# --- 3. SUBMISSÃO DE RESUMOS EM DIFERENTES CATEGORIAS ---
-elif menu == "✍️ Submissão de Resumos de Trabalhos":
-    st.subheader("✍️ Submissão de Trabalhos Científicos/Resumo Expandido")
-    st.write("Envie o seu resumo para avaliação da comissão científica do evento.")
-    
-    with st.form("form_submissao_trabalho"):
-        titulo_trab = st.text_input("Título do Resumo")
-        autor_princ = st.text_input("Autor Principal")
-        coautores = st.text_area("Coautores (separados por vírgula)")
-        
-        categoria = st.selectbox("Selecione a Categoria / Eixo Temático:", [
-            "Fisioterapia Ortopédica, Reumatológica, Traumatológica e Desportiva",
-            "Fisioterapia em Terapia Intensiva e Cardiorrespiratória",
-            "Fisioterapia Neurológica e Pediátrica",
-            "Saúde da Mulher, Pélvica e Oncológica",
-            "Saúde Coletiva, Políticas Públicas e Inovação em Saúde"
-            "Tecnologias Digitais e Inteligência Artificial na Saúde",
+                st.error("Preencha os campos.")
+
+# --- 3. SUBMISSÃO ---
+elif menu == "✍️ Submissão de Trabalhos":
+    st.subheader("✍️ Submissão de Trabalhos")
+    with st.form("form_sub"):
+        titulo = st.text_input("Título")
+        # Correção da vírgula faltante no seu código original
+        categoria = st.selectbox("Categoria:", [
+            "Fisioterapia Ortopédica e Desportiva",
+            "Fisioterapia em Terapia Intensiva",
+            "Fisioterapia Neurológica",
+            "Saúde da Mulher",
+            "Saúde Coletiva e Políticas Públicas",
+            "Tecnologias Digitais e IA na Saúde"
         ])
-        
-        arquivo_resumo = st.file_uploader("Arquivo do Resumo (Template padrão Word)", type=["doc", "docx"])
-        
-        btn_submeter = st.form_submit_button("Enviar Trabalho para Avaliação")
-        if btn_submeter:
-            if titulo_trab and autor_princ and arquivo_resumo:
-                st.success(f"Trabalho submetido com sucesso na categoria **{categoria}**! O código de rastreio foi gerado.")
-            else:
-                st.error("Preencha todos os campos obrigatórios e anexe o arquivo do resumo.")
+        arquivo = st.file_uploader("Arquivo", type=["doc", "docx"])
+        if st.form_submit_button("Enviar"):
+            st.success(f"Trabalho '{titulo}' enviado na categoria {categoria}!")
 
-# --- 4. PAGAMENTO DE DOI INDIVIDUAL ---
+# --- 4. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
-    st.subheader("💳 Solicitação e Pagamento de DOI Individual")
-    st.write("""
-        A publicação nos Anais oficiais do evento com ISBN é **totalmente gratuita**. No entanto, caso você deseje 
-        um **DOI (Digital Object Identifier) individual e exclusivo** para o seu artigo publicado (ideal para Lattes e Pós-Graduação), 
-        é cobrada uma taxa de emissão de registro internacional.
-    """)
-    
-    st.info("ℹ️ **Valor da Taxa de DOI Individual:** R$ 15,00 por trabalho aceito.")
-    
-    with st.form("form_doi"):
-        id_trabalho = st.text_input("ID ou Título Exato do Trabalho Aprovado")
-        autor_resp = st.text_input("Nome do Autor Responsável pelo Pagamento")
-        
-        # Simulação de integração de pagamento via PIX (Geração de QR Code / Chave Copia e Cola)
-        st.markdown("### Dados para Pagamento via PIX:")
-        st.code("Chave PIX (CNPJ/E-mail da fundação/suporte): larissa.enf@pucgoias.edu.br")
-        
-        comprovante_doi = st.file_uploader("Anexe o Comprovante do PIX da Taxa de DOI", type=["pdf", "png", "jpg"])
-        
-        btn_solicitar_doi = st.form_submit_button("Validar e Requisitar DOI")
-        if btn_solicitar_doi:
-            if id_trabalho and comprovante_doi:
-                st.success("Comprovante enviado com sucesso! Nosso setor financeiro validará o pagamento e o DOI será emitido em até 1 semana.")
-            else:
-                st.error("Por favor, informe o título do trabalho e envie o comprovante de pagamento.")
+    st.subheader("💳 Solicitação de DOI")
+    st.info("Valor: R$ 15,00. Chave PIX: larissa.enf@pucgoias.edu.br")
+    comprovante = st.file_uploader("Anexe o comprovante", type=["pdf", "png", "jpg"])
+    if st.button("Confirmar Solicitação"):
+        st.success("Comprovante recebido! Em até 1 semana seu DOI será emitido.")
 
-# --- 5. ANAIS DE EVENTOS ---
+# --- 5. ANAIS ---
 elif menu == "📚 Anais Publicados":
-    st.subheader("📚 Repositório de Anais de Fisioterapia")
-    st.write("Acesse os cadernos de resumos de edições anteriores.")
-    st.markdown("---")
-    
-    col1, col2 = st.columns([4, 1])
-    with col1:
-        st.write("**Jornada Científica do Curso de Fisioterapia da PUC Goiás (2025)**")
-        st.caption("ISBN: 0000-0000 | Artigos com e sem DOI individual.")
-    with col2:
-        st.button("📥 Baixar Anais", key="download_2025")
-
-# --- RODAPÉ ---
-st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray;'>Pontifícia Universidade Católica de Goiás (PUC Goiás) • Saúde e Sociedade FST Fisioterapia</p>", unsafe_allow_html=True)
+    st.subheader("📚 Anais")
+    st.write("Jornada Científica 2025.")
