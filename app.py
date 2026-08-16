@@ -57,6 +57,8 @@ elif menu == "🎟️ Inscrições (Eventos)":
             Saúde Coletiva, Políticas Públicas e Inovação em Saúde,
             
             Tecnologias Digitais e Inteligência Artificial na Saúde
+
+            Outras Áreas
             
         ⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby (Aguardando Confirmação)** até que a equipe financeira valide o comprovante de PIX enviado no formulário em relação à chave: `eventoscientificospucgoias@hotmail.com`.
     """)
