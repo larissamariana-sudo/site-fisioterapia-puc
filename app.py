@@ -82,6 +82,7 @@ elif menu == "✍️ Submissão de Trabalhos":
         * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
         
         **PROCESSO DE SUBMISSÃO**
+        
         **Formato:** Todos os trabalhos (resumos ou artigos completos) devem ser submetidos obrigatoriamente em arquivo formato WORD.
         **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial. Trabalhos enviados fora do prazo não serão considerados.
         **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas, sendo os Anais devidamente registrados com ISBN.
