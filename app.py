@@ -17,10 +17,10 @@ st.markdown("""
 
 st.write("")
 
-# --- MENU DE NAVEGAÇÃO ---
+# --- MENU DE NAVEGAÇÃO PRINCIPAL ---
 menu = st.sidebar.selectbox("Navegue pelo Portal:", [
     "🏠 Início / Sobre", 
-    "🎟️ Inscrições (Eventos)", 
+    "🎟️ Eventos e Inscrições", 
     "✍️ Submissão de Trabalhos", 
     "🔍 Consultar Status do Trabalho", 
     "💳 Taxa de DOI Individual", 
@@ -37,15 +37,27 @@ if menu == "🏠 Início / Sobre":
     * **Avaliação:** Acompanhe em tempo real se seu trabalho está em análise, aprovado ou pendente de correções.
     """)
 
-# --- 2. INSCRIÇÕES ---
-elif menu == "🎟️ Inscrições (Eventos)":
-    st.subheader("🎟️ Inscrição na Jornada Científica do Curso de Fisioterapia")
-    st.markdown("""
-    * **Estudantes, Docentes e Banca da PUC Goiás:** Inscrição totalmente **Gratuita**.
-    * **Participantes Externos (Estudantes, Docentes e Profissionais):** Inscrição **Paga (R$ 10,00)**.  
-    * **Possibilidade de submissão de resumos simples / resumos expandidos / artigos completos com ISBN GRATUITO.**
-
-    ### **EIXOS TEMÁTICOS**
+# --- 2. EVENTOS E INSCRIÇÕES (MÚLTIPLOS EVENTOS) ---
+elif menu == "🎟️ Eventos e Inscrições":
+    st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
+    st.write("Selecione abaixo o evento de seu interesse para ver os detalhes, normas e realizar a inscrição.")
+    
+    # Submenu interno para escolher o evento específico
+    evento_selecionado = st.selectbox("Escolha o Evento:", [
+        "1. Jornada Científica do Curso de Fisioterapia", 
+        "2. Minicurso Prático: Reabilitação e Terapia Manual", 
+        "3. Workshop: Inovação e Tecnologias em Saúde",
+        "4. Simpósio de Saúde Coletiva e Políticas Públicas"
+    ])
+    
+    st.markdown("---")
+    
+    if "Jornada Científica" in evento_selecionado:
+        st.markdown("### 🩺 Jornada Científica do Curso de Fisioterapia")
+        st.write("""
+        * **Público-alvo:** Estudantes, docentes, profissionais e pesquisadores.
+        ### **EIXOS TEMÁTICOS**
+        
     * Fisioterapia Ortopédica, Reumatológica, Traumatológica e Desportiva
     * Fisioterapia em Terapia Intensiva e Cardiorrespiratória
     * Fisioterapia Neurológica e Pediátrica
@@ -59,6 +71,37 @@ elif menu == "🎟️ Inscrições (Eventos)":
     st.write("")
     st.link_button("🔗 Clique aqui para preencher o formulário oficial de inscrição", "https://forms.gle/4bSypbzykj1FEpR4A")
     st.caption("Após o envio, sua inscrição será processada pela organização.")
+        * **Investimento:** 
+          * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
+          * Participantes Externos (Estudantes, Docentes e Profissionais): **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
+        * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
+        """)
+        st.link_button("🔗 Inscrever-se na Jornada Científica", "https://forms.gle/4bSypbzykj1FEpR4A")
+        
+    elif "Minicurso Prático" in evento_selecionado:
+        st.markdown("### 🤲 Minicurso Prático: Reabilitação e Terapia Manual")
+        st.write("""
+        * **Carga Horária:** 4 horas práticas.
+        * **Investimento:** R$ 30,00 (Vagas limitadas). Pagamento via PIX para `eventoscientificospucgoias@hotmail.com`.
+        * **Certificação:** Certificado emitido pela Pró-Reitoria de Extensão da PUC Goiás.
+        """)
+        st.link_button("🔗 Inscrever-se no Minicurso Prático", "https://forms.gle/SEU_LINK_DO_MINICURSO_AQUI")
+        
+    elif "Workshop" in evento_selecionado:
+        st.markdown("### 💡 Workshop: Inovação e Tecnologias em Saúde")
+        st.write("""
+        * **Foco:** Discussão sobre inteligência artificial, teleatendimento e novas tecnologias reabilitadoras.
+        * **Investimento:** Gratuito para toda a comunidade acadêmica.
+        """)
+        st.link_button("🔗 Inscrever-se no Workshop", "https://forms.gle/SEU_LINK_DO_WORKSHOP_AQUI")
+        
+    elif "Simpósio" in evento_selecionado:
+        st.markdown("### 📊 Simpósio de Saúde Coletiva e Políticas Públicas")
+        st.write("""
+        * **Foco:** Mesas-redondas e debates sobre o SUS e gestão em saúde.
+        * **Investimento:** Gratuito.
+        """)
+        st.link_button("🔗 Inscrever-se no Simpósio", "https://forms.gle/SEU_LINK_DO_SIMPOSIO_AQUI")
 
 # --- 3. SUBMISSÃO DE TRABALHOS ---
 elif menu == "✍️ Submissão de Trabalhos":
