@@ -247,8 +247,7 @@ elif menu == "🔍 Consultar Status do Trabalho":
                                     st.error("⚠️ **Status Atual:** Solicitação de Alterações Pendentes.")
                                     st.markdown("""
                                     O comitê científico revisou seu trabalho e solicitou ajustes estruturais ou textuais. 
-                                    * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.
-                                    """)
+                                    * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.""")
                                 else:
                                     st.info(f"📌 **Status Atual:** {status_trabalho}")
                             else:
