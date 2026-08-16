@@ -34,8 +34,8 @@ if menu == "🏠 Início / Sobre":
 elif menu == "🎟️ Inscrições (Eventos)":
     st.subheader("🎟️ Inscrição na Jornada Científica do Curso de Fisioterapia")
     st.write("""
-        As inscrições para o evento e o envio de comprovantes de pagamento (para categorias externas) 
-        são realizados através do nosso formulário oficial integrado.
+        As inscrições no evento para banca examinadora, estudantes e docentes da PUC Goiás é gratuita.
+        As inscrições no evento para externos (estudantes, docentes e profissionais - categorias extenas) é confirmada após o pagamento da taxa de inscrição e envio do comprovante de pagamento através do formulário integrado.
     """)
     
     st.info("ℹ️ **Chave PIX para inscrições pagas:** eventoscientificospucgoias@hotmail.com")
@@ -44,7 +44,7 @@ elif menu == "🎟️ Inscrições (Eventos)":
     
     # BOTÃO LINK PARA O GOOGLE FORMS
     # (Substitua o link entre parênteses pelo link real do seu Google Forms)
-    st.link_button("🔗 Clique aqui para preencher o formulário oficial de inscrição", "https://forms.gle/SEU_LINK_DO_GOOGLE_FORMS_AQUI")
+    st.link_button("🔗 Clique aqui para preencher o formulário oficial de inscrição", "https://forms.gle/4bSypbzykj1FEpR4A")
     
     st.write("")
     st.caption("Após o envio pelo formulário, sua inscrição será processada e registrada automaticamente no sistema da organização.")
