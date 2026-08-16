@@ -248,7 +248,7 @@ elif menu == "📚 Anais Publicados":
         st.caption("Publicado oficialmente | ISBN: 0000-0000 (Exemplo)")
     with col2:
         # Substitua o '#' pelo link público que você copiou do Google Drive:
-        st.link_button("📥 Baixar Anais", "COLE_O_LINK_DO_PDF_DO_DRIVE_AQUI")
+        st.link_button("📥 Baixar Anais", "https://drive.google.com/file/d/19ysTkH8FBmHI4F4MzmRKynaVcmX6EmQH/view?usp=drive_link")
 
 # --- RODAPÉ ---
 st.markdown("---")
