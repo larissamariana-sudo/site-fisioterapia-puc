@@ -76,12 +76,113 @@ elif menu == "✍️ Submissão de Trabalhos":
     with tab_simples:
         st.markdown("### Normas para Submissão de Resumo Simples")
         st.write("250 a 350 palavras. Formato Word. Estrutura: Introdução, Objetivos, Metodologia, Resultados e Discussão, Considerações Finais.")
+                **INFORMAÇÕES PARA A SUBMISSÃO**
+        
+        **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
+        
+        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
+        
+        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
+        
+        **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
+
+    st.markdown("### Normas para Submissão de Resumo Simples")
+        st.write("""
+        * **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, e Considerações Finais.
+        * **Formatação:** Mínimo de 250 palavras e Máximo de 350 palavras (excluindo título e referências). Fonte Times New Roman, tamanho 12, espaçamento 1,0.
+        * **Palavras-chave:** De 3 a 5 palavras-chave separadas por ponto e vírgula.
+        * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
+        
+        **INFORMAÇÕES PARA A SUBMISSÃO**
+        
+        **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
+        
+        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
+        
+        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
+        
+        **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
+        
+        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
+        
+        * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        * **Alinhamento:** Justificado.
+        * **Título:** Alinhado à esquerda, em caixa alta e negrito.
+        * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
+        * **Instituição:** 1;2Pontifícia Universidade Católica de Goiás.
+        """)
+        st.info("💡 Ideal para resumos de trabalhos que exigem ineditismo, relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
+    
     with tab_expandido:
         st.markdown("### Normas para Submissão de Resumo Expandido")
         st.write("4 a 7 páginas. Formato Word. Seguindo as normas da ABNT.")
+                **INFORMAÇÕES PARA A SUBMISSÃO**
+        
+        **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
+        
+        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
+        
+        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
+        
+        **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
+
+        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
+        
+        * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        * **Alinhamento:** Justificado.
+        * **Título:** Alinhado à esquerda, em caixa alta e negrito.
+        * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
+        * **Instituição:** 1;2Pontifícia Universidade Católica de Goiás.
+        """)
+
+        * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
+        
+        * **Extensão:** No mínimo 4 páginas e no máximo 7 páginas completas.
+
+        * **Formatação:** Fonte Times New Roman, tamanho 12, espaçamento entre linhas 1,0, recuo de parágrafo de 1,25 cm.
+
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+
+        * **Citações e Referências:** Devem seguir as normas da ABNT (NBR 10520:2023 e NBR 6023:2023).
+
+        * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
+        """)
+        
+        st.info("💡 Indicado para artigos científicos e pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
+        
     with tab_completo:
         st.markdown("### Normas para Submissão de Artigo Completo")
         st.write("8 a 16 páginas. Formato Word. Comprovante de Comitê de Ética quando aplicável.")
+        
+        **INFORMAÇÕES PARA A SUBMISSÃO**
+        
+        **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
+        
+        **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
+        
+        **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
+        
+        **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
+
+        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
+        
+        * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        * **Alinhamento:** Justificado.
+        * **Título:** Alinhado à esquerda, em caixa alta e negrito.
+        * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
+        * **Instituição:** 1;2Pontifícia Universidade Católica de Goiás.
+        """)
+
+        * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
+        * **Extensão:** No mínimo 8 páginas e no máximo 16 páginas completas.
+        * **Formatação:** Fonte Times New Roman, tamanho 12, espaçamento entre linhas 1,0, recuo de parágrafo de 1,25 cm.
+        * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        * **Citações e Referências:** Devem seguir as normas da ABNT (NBR 10520:2023 e NBR 6023:2023).
+        * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
+        """)
 
     st.markdown("---")
     st.info("📌 **Importante:** Para que os arquivos sejam salvos diretamente na nuvem da comissão científica e organizados em planilhas, a submissão é feita por formulário dedicado.")
