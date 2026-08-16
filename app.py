@@ -42,7 +42,6 @@ elif menu == "🎟️ Eventos e Inscrições":
     st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
     st.write("Selecione abaixo o evento de seu interesse para ver os detalhes, normas e realizar a inscrição.")
     
-    # Submenu interno para escolher o evento específico
     evento_selecionado = st.selectbox("Escolha o Evento:", [
         "1. Jornada Científica do Curso de Fisioterapia", 
         "2. Minicurso Prático: Reabilitação e Terapia Manual", 
@@ -56,26 +55,27 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.markdown("### 🩺 Jornada Científica do Curso de Fisioterapia")
         st.write("""
         * **Público-alvo:** Estudantes, docentes, profissionais e pesquisadores.
-        ### **EIXOS TEMÁTICOS**
-        
-    * Fisioterapia Ortopédica, Reumatológica, Traumatológica e Desportiva
-    * Fisioterapia em Terapia Intensiva e Cardiorrespiratória
-    * Fisioterapia Neurológica e Pediátrica
-    * Saúde da Mulher, Pélvica e Oncológica
-    * Saúde Coletiva, Políticas Públicas e Inovação em Saúde
-    * Tecnologias Digitais e Inteligência Artificial na Saúde
-    * Outras Áreas
-
-    ⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby (Aguardando Confirmação)** até que a equipe financeira valide o comprovante de PIX enviado no formulário em relação à chave: `eventoscientificospucgoias@hotmail.com`.
-    """)
-    st.write("")
-    st.link_button("🔗 Clique aqui para preencher o formulário oficial de inscrição", "https://forms.gle/4bSypbzykj1FEpR4A")
-    st.caption("Após o envio, sua inscrição será processada pela organização.")
-    * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
-    * Participantes Externos (Estudantes, Docentes e Profissionais): **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
-    * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
+        * **Investimento:** 
+          * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
+          * Participantes Externos (Estudantes, Docentes e Profissionais): **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
+        * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
         """)
-    st.link_button("🔗 Inscrever-se na Jornada Científica", "https://forms.gle/4bSypbzykj1FEpR4A")
+        
+        st.markdown("### **EIXOS TEMÁTICOS**")
+        st.markdown("""
+        * Fisioterapia Ortopédica, Reumatológica, Traumatológica e Desportiva
+        * Fisioterapia em Terapia Intensiva e Cardiorrespiratória
+        * Fisioterapia Neurológica e Pediátrica
+        * Saúde da Mulher, Pélvica e Oncológica
+        * Saúde Coletiva, Políticas Públicas e Inovação em Saúde
+        * Tecnologias Digitais e Inteligência Artificial na Saúde
+        * Outras Áreas
+        """)
+        
+        st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby (Aguardando Confirmação)** até que a equipe financeira valide o comprovante de PIX enviado no formulário em relação à chave: `eventoscientificospucgoias@hotmail.com`.")
+        st.write("")
+        st.link_button("🔗 Inscrever-se na Jornada Científica", "https://forms.gle/4bSypbzykj1FEpR4A")
+        st.caption("Após o envio, sua inscrição será processada pela organização.")
         
     elif "Minicurso Prático" in evento_selecionado:
         st.markdown("### 🤲 Minicurso Prático: Reabilitação e Terapia Manual")
@@ -118,14 +118,12 @@ elif menu == "✍️ Submissão de Trabalhos":
         * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
         
         **INFORMAÇÕES PARA A SUBMISSÃO**
-        
         * **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
         * **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
         * **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
         * **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
         
         **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-        
         * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
         * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
         * **Alinhamento:** Justificado.
@@ -146,7 +144,6 @@ elif menu == "✍️ Submissão de Trabalhos":
         * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
         
         **INFORMAÇÕES PARA A SUBMISSÃO**
-        
         * **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
         * **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
         * **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
@@ -165,7 +162,6 @@ elif menu == "✍️ Submissão de Trabalhos":
         * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
         
         **INFORMAÇÕES PARA A SUBMISSÃO**
-        
         * **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
         * **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
         * **Gratuidade:** A submissão e a publicação nos anais do evento são totalmente gratuitas (ISBN).
@@ -174,7 +170,6 @@ elif menu == "✍️ Submissão de Trabalhos":
 
     st.markdown("---")
     st.info("📌 **Importante:** Para que os arquivos sejam salvos diretamente na nuvem da comissão científica e organizados em planilhas, a submissão é feita por formulário dedicado.")
-    
     st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/wqFaFTRRxj2KwKsp9")
 
 # --- 4. CONSULTAR STATUS DO TRABALHO ---
@@ -194,23 +189,16 @@ elif menu == "🔍 Consultar Status do Trabalho":
                 try:
                     import pandas as pd
                     
-                    # 1. Cole o link completo da sua planilha do Google entre as aspas abaixo:
                     link_planilha = "https://docs.google.com/spreadsheets/d/1wBmZZI6-6WwmrrNsb0L6d2-iyPCZ2WGQUM1xzsylBu8/edit?usp=sharing"
                     
-                    # Converte o link do Google Sheets para o formato de leitura CSV
                     if "/edit" in link_planilha:
                         id_planilha = link_planilha.split("/d/")[1].split("/")[0]
                         url_csv = f"https://docs.google.com/spreadsheets/d/{id_planilha}/export?format=csv"
                     else:
                         url_csv = link_planilha
                     
-                    # Lê os dados da planilha
                     df = pd.read_csv(url_csv)
                     
-                    # Mostra no print interno os nomes reais das colunas para ajudar a encontrar se houver erro
-                    colunas_disponiveis = [col.strip().lower() for col in df.columns]
-                    
-                    # Procura pela coluna de e-mail de forma inteligente
                     coluna_email = None
                     for col in df.columns:
                         col_limpa = col.strip().lower()
@@ -223,7 +211,6 @@ elif menu == "🔍 Consultar Status do Trabalho":
                         resultado = df[df[coluna_email] == email_busca]
                         
                         if not resultado.empty:
-                            # Procura a coluna de status
                             coluna_status = None
                             for col in df.columns:
                                 col_limpa = col.strip().lower()
@@ -234,7 +221,6 @@ elif menu == "🔍 Consultar Status do Trabalho":
                             if coluna_status:
                                 status_trabalho = str(resultado.iloc[0][coluna_status]).strip().capitalize()
                                 
-                                # Exibe a mensagem correta baseada no status da planilha
                                 if "Análise" in status_trabalho or "Em análise" in status_trabalho:
                                     st.warning("⏳ **Status Atual:** Recebido / Em Análise pela Banca Científica.")
                                     st.write("Seu trabalho foi entregue e está passando pela avaliação dos pares. Acompanhe seu e-mail.")
@@ -247,7 +233,8 @@ elif menu == "🔍 Consultar Status do Trabalho":
                                     st.error("⚠️ **Status Atual:** Solicitação de Alterações Pendentes.")
                                     st.markdown("""
                                     O comitê científico revisou seu trabalho e solicitou ajustes estruturais ou textuais. 
-                                    * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.""")
+                                    * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.
+                                    """)
                                 else:
                                     st.info(f"📌 **Status Atual:** {status_trabalho}")
                             else:
@@ -288,7 +275,6 @@ elif menu == "📚 Anais Publicados":
         st.write("**Anais da Jornada Científica do Curso de Fisioterapia — PUC Goiás (2026)**")
         st.caption("Publicado oficialmente | ISBN: 0000-0000 (Exemplo)")
     with col2:
-        # Substitua o '#' pelo link público que você copiou do Google Drive:
         st.link_button("📥 Baixar Anais", "https://drive.google.com/file/d/19ysTkH8FBmHI4F4MzmRKynaVcmX6EmQH/view?usp=drive_link")
 
 # --- RODAPÉ ---
