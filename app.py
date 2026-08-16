@@ -47,7 +47,7 @@ elif menu == "🎟️ Inscrições (Eventos)":
     
     with st.form("form_inscricao"):
         evento_escolhido = st.selectbox("Selecione o Evento:", [
-            "Jornada Científica do Curso de Fisioterapia (Gratuito - Apenas "Estudante PUC Goiás")", 
+            "Jornada Científica do Curso de Fisioterapia (Gratuito - Apenas "Estudante - PUC Goiás")", 
             "Jornada Científica do Curso de Fisioterapia (Gratuito - Apenas "Docente - PUC Goiás")", 
             "Jornada Científica do Curso de Fisioterapia (Pago - R$ 5,00 - "Estudante Externo")", 
             "Jornada Científica do Curso de Fisioterapia (Pago - R$ 10,00 - "Docente Externo", "Profissional")", 
