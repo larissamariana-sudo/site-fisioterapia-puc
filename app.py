@@ -49,13 +49,13 @@ elif menu == "🎟️ Inscrições (Eventos)":
         
         matricula_puc = ""
         if "PUC Goiás" in vinculo:
-            matricula_puc = st.text_input("Nº de Matrícula (Estudante) ou Registro SIAPE (Docente):", placeholder="Ex: 202310000 ou 12345")
+            matricula_puc = st.text_input("Nº de Matrícula (Estudante) ou Registro SGA (Docente):", placeholder="Ex: 202310000 ou 12345")
         
         pagamento_necessario = "Pago" in vinculo
         comprovante_pagamento = None
         
         if pagamento_necessario:
-            st.warning("⚠️ **Atenção:** Como você selecionou uma categoria externa, este evento possui taxa de inscrição. Realize o PIX para a chave `larissa.enf@pucgoias.edu.br` e anexe o comprovante abaixo.")
+            st.warning("⚠️ **Atenção:** Como você selecionou uma categoria externa, este evento possui taxa de inscrição. Realize o PIX para a chave `eventoscientificospucgoias@hotmail.com` e anexe o comprovante abaixo.")
             comprovante_pagamento = st.file_uploader("Enviar Comprovante de Pagamento da Inscrição (PDF/Imagem)", type=["pdf", "png", "jpg"])
         
         btn_inscrever = st.form_submit_button("Confirmar Inscrição")
@@ -82,30 +82,29 @@ elif menu == "✍️ Submissão de Trabalhos":
         st.markdown("### Normas para Submissão de Resumo Simples")
         st.write("""
         * **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, e Considerações Finais.
-        * **Formatação:** Máximo de 300 palavras (excluindo título e referências). Fonte Arial ou Times New Roman, tamanho 12, espaçamento 1,5.
+        * **Formatação:** Mínimo de 250 palavras e Máximo de 350 palavras (excluindo título e referências). Fonte Times New Roman, tamanho 12, espaçamento 1,5.
         * **Palavras-chave:** De 3 a 5 palavras-chave separadas por ponto e vírgula.
-        * **Autores:** Permitido até 6 autores por trabalho (incluindo o orientador).
+        * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
         """)
-        st.info("💡 Ideal para relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
+        st.info("💡 Ideal para resumos de trabalhos que exigem ineditismo, relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
 
     with tab_expandido:
         st.markdown("### Normas para Submissão de Resumo Expandido")
         st.write("""
         * **Estrutura Obrigatória:** Introdução (com fundamentação teórica), Metodologia detalhada, Resultados e Discussão aprofundada, Referências Principais.
-        * **Formatação:** De 3 a 5 páginas. Utilizar o template oficial do evento (Word). Margens superior/esquerda de 3cm e inferior/direita de 2cm.
+        * **Formatação:** De 4 a 7 páginas completas. Utilizar o template oficial do evento (Word). Margens superior/esquerda de 3cm e inferior/direita de 2cm.
         * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos (gráficos, tabelas ou imagens) inseridos no corpo do texto.
         * **Referências:** Normas atualizadas da ABNT.
         """)
-        st.info("💡 Indicado para pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
+        st.info("💡 Indicado para artigos científicos, trabalhos acadêmicos finalizados, pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
 
     with tab_completo:
         st.markdown("### Normas para Submissão de Artigo Completo")
         st.write("""
         * **Estrutura Obrigatória:** Título, Resumo/Abstract, Introdução, Metodologia, Resultados, Discussão, Considerações Finais e Referências.
-        * **Formatação:** De 8 a 15 páginas. Fonte tamanho 12, espaçamento entre linhas 1,5. Envio em formato `.doc` ou `.docx`.
+        * **Formatação:** De 8 a 16 páginas. Fonte tamanho 12, espaçamento entre linhas 1,5. Envio em formato `.doc` ou `.docx`.
         * **Ética em Pesquisa:** Trabalhos que envolvam seres humanos ou animais devem obrigatoriamente apresentar o número do parecer do Comitê de Ética (CEP/CEUA) na seção de metodologia.
         """)
-        st.info("💡 Excelente para publicações de alto impacto científico com foco de publicação futura em anais indexados.")
 
     st.markdown("---")
     st.markdown("### 📥 Área de Envio do Trabalho")
@@ -127,7 +126,8 @@ elif menu == "✍️ Submissão de Trabalhos":
             "Fisioterapia Neurológica e Pediátrica",
             "Saúde da Mulher, Pélvica e Oncológica",
             "Saúde Coletiva, Políticas Públicas e Inovação em Saúde",
-            "Tecnologias Digitais e Inteligência Artificial na Saúde"
+            "Tecnologias Digitais e Inteligência Artificial na Saúde"            
+            "Outras Áreas"
         ])
         
         arquivo_resumo = st.file_uploader("Anexe o arquivo correspondente (Formato Word .doc ou .docx)", type=["doc", "docx"])
@@ -143,7 +143,7 @@ elif menu == "✍️ Submissão de Trabalhos":
 elif menu == "💳 Taxa de DOI Individual":
     st.subheader("💳 Solicitação e Pagamento de DOI Individual")
     st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional.")
-    st.info("ℹ️ **Valor:** R$ 15,00. **Chave PIX:** larissa.enf@pucgoias.edu.br")
+    st.info("ℹ️ **Valor:** R$ 15,00. **Chave PIX:** eventoscientificospucgoias@hotmail.com")
     
     with st.form("form_doi"):
         id_trabalho = st.text_input("ID ou Título Exato do Trabalho Aprovado")
