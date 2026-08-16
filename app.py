@@ -71,11 +71,11 @@ elif menu == "🎟️ Eventos e Inscrições":
     st.write("")
     st.link_button("🔗 Clique aqui para preencher o formulário oficial de inscrição", "https://forms.gle/4bSypbzykj1FEpR4A")
     st.caption("Após o envio, sua inscrição será processada pela organização.")
-          * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
-          * Participantes Externos (Estudantes, Docentes e Profissionais): **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
-        * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
+    * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
+    * Participantes Externos (Estudantes, Docentes e Profissionais): **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
+    * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
         """)
-        st.link_button("🔗 Inscrever-se na Jornada Científica", "https://forms.gle/4bSypbzykj1FEpR4A")
+    st.link_button("🔗 Inscrever-se na Jornada Científica", "https://forms.gle/4bSypbzykj1FEpR4A")
         
     elif "Minicurso Prático" in evento_selecionado:
         st.markdown("### 🤲 Minicurso Prático: Reabilitação e Terapia Manual")
