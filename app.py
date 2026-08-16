@@ -27,7 +27,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
-    st.subheader("Sobre o Portal Acadêmico")
+    st.subheader("Sobre o Portal Acadêmico de Eventos Científicos")
     st.write("Bem-vindo à plataforma de gestão acadêmica e científica para eventos da PUC Goiás.")
 
 # --- 2. INSCRIÇÕES ---
@@ -36,9 +36,7 @@ elif menu == "🎟️ Inscrições (Eventos)":
     
     with st.form("form_inscricao"):
         evento_escolhido = st.selectbox("Selecione o Evento:", [
-            "Jornada Científica - Fisioterapia (Gratuito - Estudante)", 
-            "Jornada Científica - Fisioterapia (Gratuito - Docente)", 
-            "Jornada Científica - Fisioterapia (Pago - Profissional/Externo)",
+            "Jornada Científica - Fisioterapia (Gratuito - Estudante/Docente, Pago - Profissional/Externo)", 
             "Minicurso Prático: Massagem Terapêutica (Pago)"
         ])
         
