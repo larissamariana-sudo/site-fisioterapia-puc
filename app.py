@@ -9,7 +9,7 @@ st.set_page_config(
 # --- ESTILIZAÇÃO DO CABEÇALHO INSTITUCIONAL ---
 st.markdown("""
     <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white;'>
-        <h1 style='margin:0; font-size: 26px;'>Curso de Fisioterapia e outros — PUC Goiás</h1>
+        <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Humanidades e Áreas Afins — PUC Goiás</h1>
         <p style='margin:5px 0 0 0; font-size: 15px;'>Portal de Eventos, Submissões, Anais e Certificação DOI</p>
     </div>
 """, unsafe_allow_html=True)
