@@ -76,7 +76,8 @@ elif menu == "✍️ Submissão de Trabalhos":
     with tab_simples:
         st.markdown("### Normas para Submissão de Resumo Simples")
         st.write("250 a 350 palavras. Formato Word. Estrutura: Introdução, Objetivos, Metodologia, Resultados e Discussão, Considerações Finais.")
-                **INFORMAÇÕES PARA A SUBMISSÃO**
+        
+        **INFORMAÇÕES PARA A SUBMISSÃO**
         
         **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
         
@@ -157,7 +158,7 @@ elif menu == "✍️ Submissão de Trabalhos":
         st.write("8 a 16 páginas. Formato Word. Comprovante de Comitê de Ética quando aplicável.")
         
         **INFORMAÇÕES PARA A SUBMISSÃO**
-        
+                
         **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
         
         **Prazo:** As submissões devem ser realizadas estritamente dentro das datas estabelecidas no cronograma oficial.
