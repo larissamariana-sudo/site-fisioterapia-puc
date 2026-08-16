@@ -33,42 +33,21 @@ if menu == "🏠 Início / Sobre":
 # --- 2. INSCRIÇÕES ---
 elif menu == "🎟️ Inscrições (Eventos)":
     st.subheader("🎟️ Inscrição na Jornada Científica do Curso de Fisioterapia")
-    st.write("Preencha os dados abaixo. O sistema identificará automaticamente se há taxa com base no seu vínculo.")
+    st.write("""
+        As inscrições para o evento e o envio de comprovantes de pagamento (para categorias externas) 
+        são realizados através do nosso formulário oficial integrado.
+    """)
     
-    with st.form("form_inscricao"):
-        nome_insc = st.text_input("Nome Completo")
-        email_insc = st.text_input("E-mail de Contato")
-        
-        vinculo = st.selectbox("Selecione o seu Vínculo:", [
-            "Estudante - PUC Goiás (Gratuito)", 
-            "Docente - PUC Goiás (Gratuito)", 
-            "Banca Examinadora (Gratuito)", 
-            "Estudante Externo (Pago - R$ 5,00)", 
-            "Docente Externo / Profissional Externo (Pago - R$ 10,00)"
-        ])
-        
-        matricula_puc = ""
-        if "PUC Goiás" in vinculo:
-            matricula_puc = st.text_input("Nº de Matrícula (Estudante) ou Registro SGA (Docente):", placeholder="Ex: 202310000 ou 12345")
-        
-        pagamento_necessario = "Pago" in vinculo
-        comprovante_pagamento = None
-        
-        if pagamento_necessario:
-            st.warning("⚠️ **Atenção:** Como você selecionou uma categoria externa, este evento possui taxa de inscrição. Realize o PIX para a chave `eventoscientificospucgoias@hotmail.com` e anexe o comprovante abaixo.")
-            comprovante_pagamento = st.file_uploader("Enviar Comprovante de Pagamento da Inscrição (PDF/Imagem)", type=["pdf", "png", "jpg"])
-        
-        btn_inscrever = st.form_submit_button("Confirmar Inscrição")
-        
-        if btn_inscrever:
-            if nome_insc and email_insc:
-                if pagamento_necessario and not comprovante_pagamento:
-                    st.error("Por favor, anexe o comprovante de pagamento da inscrição.")
-                else:
-                    status_msg = "Inscrição Gratuita confirmada!" if not pagamento_necessario else "Inscrição realizada! Comprovante enviado para validação financeira."
-                    st.success(f"Inscrição realizada com sucesso!\n\n- **Nome:** {nome_insc}\n- **Vínculo:** {vinculo}\n- **Status:** status_msg")
-            else:
-                st.error("Preencha os campos obrigatórios (Nome e E-mail).")
+    st.info("ℹ️ **Chave PIX para inscrições pagas:** eventoscientificospucgoias@hotmail.com")
+    
+    st.write("")
+    
+    # BOTÃO LINK PARA O GOOGLE FORMS
+    # (Substitua o link entre parênteses pelo link real do seu Google Forms)
+    st.link_button("🔗 Clique aqui para preencher o formulário oficial de inscrição", "https://forms.gle/SEU_LINK_DO_GOOGLE_FORMS_AQUI")
+    
+    st.write("")
+    st.caption("Após o envio pelo formulário, sua inscrição será processada e registrada automaticamente no sistema da organização.")
 
 # --- 3. SUBMISSÃO DE TRABALHOS (COM INSTRUÇÕES COMPLETAS) ---
 elif menu == "✍️ Submissão de Trabalhos":
