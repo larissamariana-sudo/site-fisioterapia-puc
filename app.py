@@ -39,7 +39,6 @@ elif menu == "🎟️ Inscrições (Eventos)":
         nome_insc = st.text_input("Nome Completo")
         email_insc = st.text_input("E-mail de Contato")
         
-        # Seleção de Vínculo que comanda a regra de pagamento
         vinculo = st.selectbox("Selecione o seu Vínculo:", [
             "Estudante - PUC Goiás (Gratuito)", 
             "Docente - PUC Goiás (Gratuito)", 
@@ -48,14 +47,10 @@ elif menu == "🎟️ Inscrições (Eventos)":
             "Docente Externo / Profissional Externo (Pago - R$ 10,00)"
         ])
         
-        # Campo opcional ou condicional de comprovação da PUC
         matricula_puc = ""
-        comprovante_vinculo = None
-        
         if "PUC Goiás" in vinculo:
             matricula_puc = st.text_input("Nº de Matrícula (Estudante) ou Registro SIAPE (Docente):", placeholder="Ex: 202310000 ou 12345")
         
-        # Lógica automática de pagamento baseada no vínculo escolhido
         pagamento_necessario = "Pago" in vinculo
         comprovante_pagamento = None
         
@@ -71,16 +66,59 @@ elif menu == "🎟️ Inscrições (Eventos)":
                     st.error("Por favor, anexe o comprovante de pagamento da inscrição.")
                 else:
                     status_msg = "Inscrição Gratuita confirmada!" if not pagamento_necessario else "Inscrição realizada! Comprovante enviado para validação financeira."
-                    st.success(f"Inscrição realizada com sucesso!\n\n- **Nome:** {nome_insc}\n- **Vínculo:** {vinculo}\n- **Status:** {status_msg}")
+                    st.success(f"Inscrição realizada com sucesso!\n\n- **Nome:** {nome_insc}\n- **Vínculo:** {vinculo}\n- **Status:** status_msg")
             else:
                 st.error("Preencha os campos obrigatórios (Nome e E-mail).")
 
-# --- 3. SUBMISSÃO ---
+# --- 3. SUBMISSÃO DE TRABALHOS (COM INSTRUÇÕES COMPLETAS) ---
 elif menu == "✍️ Submissão de Trabalhos":
-    st.subheader("✍️ Submissão de Trabalhos Científicos/Resumo Expandido")
+    st.subheader("✍️ Central de Submissão de Trabalhos Científicos")
+    st.write("Consulte abaixo as normas e instruções para cada modalidade antes de realizar o envio do seu arquivo.")
+    
+    # Abas de Instruções para cada modalidade
+    tab_simples, tab_expandido, tab_completo = st.tabs(["📄 Resumo Simples", "📑 Resumo Expandido", "📚 Artigo Completo"])
+    
+    with tab_simples:
+        st.markdown("### Normas para Submissão de Resumo Simples")
+        st.write("""
+        * **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, e Considerações Finais.
+        * **Formatação:** Máximo de 300 palavras (excluindo título e referências). Fonte Arial ou Times New Roman, tamanho 12, espaçamento 1,5.
+        * **Palavras-chave:** De 3 a 5 palavras-chave separadas por ponto e vírgula.
+        * **Autores:** Permitido até 6 autores por trabalho (incluindo o orientador).
+        """)
+        st.info("💡 Ideal para relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
+
+    with tab_expandido:
+        st.markdown("### Normas para Submissão de Resumo Expandido")
+        st.write("""
+        * **Estrutura Obrigatória:** Introdução (com fundamentação teórica), Metodologia detalhada, Resultados e Discussão aprofundada, Referências Principais.
+        * **Formatação:** De 3 a 5 páginas. Utilizar o template oficial do evento (Word). Margens superior/esquerda de 3cm e inferior/direita de 2cm.
+        * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos (gráficos, tabelas ou imagens) inseridos no corpo do texto.
+        * **Referências:** Normas atualizadas da ABNT.
+        """)
+        st.info("💡 Indicado para pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
+
+    with tab_completo:
+        st.markdown("### Normas para Submissão de Artigo Completo")
+        st.write("""
+        * **Estrutura Obrigatória:** Título, Resumo/Abstract, Introdução, Metodologia, Resultados, Discussão, Considerações Finais e Referências.
+        * **Formatação:** De 8 a 15 páginas. Fonte tamanho 12, espaçamento entre linhas 1,5. Envio em formato `.doc` ou `.docx`.
+        * **Ética em Pesquisa:** Trabalhos que envolvam seres humanos ou animais devem obrigatoriamente apresentar o número do parecer do Comitê de Ética (CEP/CEUA) na seção de metodologia.
+        """)
+        st.info("💡 Excelente para publicações de alto impacto científico com foco de publicação futura em anais indexados.")
+
+    st.markdown("---")
+    st.markdown("### 📥 Área de Envio do Trabalho")
+    
     with st.form("form_submissao_trabalho"):
-        titulo_trab = st.text_input("Título do Resumo")
-        autor_princ = st.text_input("Autor Principal")
+        modalidade = st.selectbox("Selecione a Modalidade de Submissão:", [
+            "Resumo Simples",
+            "Resumo Expandido",
+            "Artigo Completo"
+        ])
+        
+        titulo_trab = st.text_input("Título do Trabalho")
+        autor_princ = st.text_input("Autor Principal (Apresentador)")
         coautores = st.text_area("Coautores (separados por vírgula)")
         
         categoria = st.selectbox("Selecione a Categoria / Eixo Temático:", [
@@ -92,14 +130,14 @@ elif menu == "✍️ Submissão de Trabalhos":
             "Tecnologias Digitais e Inteligência Artificial na Saúde"
         ])
         
-        arquivo_resumo = st.file_uploader("Arquivo do Resumo (Template padrão Word)", type=["doc", "docx"])
+        arquivo_resumo = st.file_uploader("Anexe o arquivo correspondente (Formato Word .doc ou .docx)", type=["doc", "docx"])
         
         btn_submeter = st.form_submit_button("Enviar Trabalho para Avaliação")
         if btn_submeter:
             if titulo_trab and autor_princ and arquivo_resumo:
-                st.success(f"Trabalho submetido com sucesso na categoria **{categoria}**! O código de rastreio foi gerado.")
+                st.success(f"Trabalho ({modalidade}) submetido com sucesso na categoria **{categoria}**! O seu protocolo de rastreio foi gerado.")
             else:
-                st.error("Preencha todos os campos obrigatórios e anexe o arquivo do resumo.")
+                st.error("Por favor, preencha todos os campos obrigatórios e anexe o arquivo correto.")
 
 # --- 4. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
