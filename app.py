@@ -87,7 +87,7 @@ elif menu == "✍️ Submissão de Trabalhos":
     st.info("📌 **Importante:** Para que os arquivos sejam salvos diretamente na nuvem da comissão científica e organizados em planilhas, a submissão é feita por formulário dedicado.")
     
     # BOTÃO PARA O SEGUNDO GOOGLE FORMS (SUBMISSÃO)
-    st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/COLOQUE_AQUI_O_LINK_DO_SEU_SEGUNDO_FORMULARIO")
+    st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/wqFaFTRRxj2KwKsp9")
 
 # --- 4. CONSULTAR STATUS DO TRABALHO ---
 elif menu == "🔍 Consultar Status do Trabalho":
