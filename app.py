@@ -124,10 +124,13 @@ elif menu == "✍️ Submissão de Trabalhos":
         st.info("💡 Ideal para resumos de trabalhos que exigem ineditismo, relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
 
     with tab_expandido:
-        st.markdown("### Normas para Submissão de Resumo Expandido")
+  st.markdown("### Normas para Submissão de Resumo Expandido")
         st.write("""
+        * **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, Conclusão e Referências Bibliográficas.
+        * **Palavras-chave:** De 3 a 5 palavras-chave separadas por ponto e vírgula.
+        * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
         
-         **INFORMAÇÕES PARA A SUBMISSÃO**
+        **INFORMAÇÕES PARA A SUBMISSÃO**
         
         **Formato:** Todos os trabalhos (resumos ou artigos completos) devem ser submetidos obrigatoriamente em arquivo formato WORD.
         
@@ -137,44 +140,68 @@ elif menu == "✍️ Submissão de Trabalhos":
         
         **DOI (Opcional):** Autores que desejarem maior rastreabilidade e indexação para seu trabalho podem optar pela aquisição do registro de DOI, conforme orientações disponíveis no formulário de submissão.
         
+        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
+        
+        **Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+        
+        **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+        
+        **Alinhamento:** Justificado.
+              
+        **Título:** Alinhado à esquerda, em caixa alta e negrito.
+        
+        **Autores:** primeiro nome (acadêmico); segundo nome (orientador)
+        
+        **Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
+        
+        **Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
+        
+        **Palavras-chave:** Três termos, separados por ponto e vírgula.
+        
         **INSTRUÇÕES PARA A SUBMISSÃO DE RESUMO EXPANDIDO**
         
-**Estrutura:** O resumo deve seguir a estrutura obrigatória de: Resumo; Palavras-chave; Introdução; Metodologia; Resultados e Discussão; Conclusão; Referências Bibliográficas. 
-
-**Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho. 
-
-**Extensão do resumo:** O resumo expandido deve ter no mínimo 4 páginas e no máximo 7 páginas completas, para que o trabalho seja aceito nos Anais da Jornada Científica do Curso de Fisioterapia da PUC Goiás.
-
-**Formato de envio:** O resumo deve ser enviado em formato WORD.
-
-**INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-
-**Fonte:** Times New Roman, tamanho 12.
-
-**Espaçamento entre linhas:** 1,0.
-
-**Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
-
-**Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
-
-**Alinhamento:** Justificado.
-
-**Recuo de parágrafo:** 1,25 cm.
-
-**Título:** Alinhado à esquerda, em caixa alta e negrito.
-
-**Autores:** primeiro nome (acadêmico); segundo nome (orientador)
-
-**Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
-
-**Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
-
-**Palavras-chave:** Três termos, separados por ponto e vírgula.
-
-**Citações:** Devem seguir a norma ABNT NBR 10520:2023 (Ex: Oliveira, 2023).
-**Referências:** De acordo com ABNT NBR 6023:2023, em ordem alfabética ao final do texto e alinhadas à esquerda.
+        **Título:** Deve ser claro e informativo, refletindo o conteúdo do trabalho.
         
-**Figuras e Tabelas:** Permitido até 2 elementos ilustrativos (gráficos, tabelas ou imagens) inseridos no corpo do texto.
+        **Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho.
+        
+        **Autores; Instituição e Contato:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2. Insira o nome completo, sem abreviações e um e-mail válido para contato.
+       
+        **Estrutura:** O resumo deve seguir a estrutura obrigatória de: Resumo; Palavras-chave; Introdução; Metodologia; Resultados e Discussão; Conclusão; Referências Bibliográficas. 
+
+        **Palavras-chave:** Devem ser incluídas obrigatoriamente três palavras-chave, selecionadas com base nos temas principais do trabalho. 
+
+        **Extensão do resumo:** O resumo expandido deve ter no mínimo 4 páginas e no máximo 7 páginas completas, para que o trabalho seja aceito nos Anais da Jornada Científica do Curso de Fisioterapia da PUC Goiás.
+
+        **Formato de envio:** O resumo deve ser enviado em formato WORD.
+
+        **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
+
+        **Fonte:** Times New Roman, tamanho 12.
+
+        **Espaçamento entre linhas:** 1,0.
+
+        **Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+
+        **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+
+        **Alinhamento:** Justificado.
+
+        **Recuo de parágrafo:** 1,25 cm.
+
+        **Título:** Alinhado à esquerda, em caixa alta e negrito.
+
+        **Autores:** primeiro nome (acadêmico); segundo nome (orientador)
+
+        **Nome dos autores:** Alinhados à esquerda, separados por ponto e vírgula, em caixa alta, escritos de forma corrida. Ex.: Maria de Oliveira1; Antônio da Silva2
+
+        **Nome da instituição (ex):** 1;2Pontifícia Universidade Católica de Goiás
+
+        **Palavras-chave:** Três termos, separados por ponto e vírgula.
+
+        **Citações:** Devem seguir a norma ABNT NBR 10520:2023 (Ex: Oliveira, 2023).
+        **Referências:** De acordo com ABNT NBR 6023:2023, em ordem alfabética ao final do texto e alinhadas à esquerda.
+        
+        **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos (gráficos, tabelas ou imagens) inseridos no corpo do texto.
         """)
         st.info("💡 Indicado para artigos científicos, trabalhos acadêmicos finalizados, pesquisas finalizadas que necessitam de um detalhamento metodológico maior.")
 
@@ -210,6 +237,8 @@ elif menu == "✍️ Submissão de Trabalhos":
 **Espaçamento entre o texto e o tópico:** entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
 
 **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
+
+**Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, Conclusão e Referências Bibliográficas.
 
 **Alinhamento:** Justificado.
 
