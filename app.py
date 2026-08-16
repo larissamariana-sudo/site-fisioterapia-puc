@@ -138,25 +138,41 @@ elif menu == "✍️ Submissão de Trabalhos":
 # --- 4. CONSULTAR STATUS DO TRABALHO ---
 elif menu == "🔍 Consultar Status do Trabalho":
     st.subheader("🔍 Acompanhamento de Avaliação do Trabalho")
-    st.write("Digite o seu e-mail de cadastro ou o código/título do trabalho para verificar em qual etapa de avaliação ele se encontra.")
+    st.write("Digite o seu e-mail cadastrado na submissão para verificar o parecer atual da comissão científica.")
     
     with st.form("form_status"):
-        busca = st.text_input("E-mail do autor principal ou Título do trabalho:")
+        email_busca = st.text_input("Digite o seu E-mail cadastrado:").strip().lower()
         consultar = st.form_submit_button("Consultar Status")
         
         if consultar:
-            if busca:
+            if email_busca:
                 st.markdown("---")
-                st.info(f"🔎 Resultado da busca para: **{busca}**")
-                st.success("✅ **Status Atual:** Em Avaliação pela Banca Científica")
-                st.markdown("""
-                * **Etapas possíveis no sistema:**
-                  * ⏳ *Recebido / Em Análise:* O trabalho foi entregue e repassado aos avaliadores.
-                  * ✅ *Aprovado:* Trabalho aceito para apresentação e publicação nos Anais!
-                  * ⚠️ *Solicitação de Alterações:* O comitê científico retornou com apontamentos de ajustes necessários no texto. Verifique seu e-mail cadastrado.
-                """)
+                st.info(f"🔎 Buscando parecer para o e-mail: **{email_busca}**")
+                
+                # --- SIMULAÇÃO DA CONSULTA REAL DO BANCO DE DADOS/PLANILHA ---
+                # (Aqui o sistema simula a leitura do status que o administrador preencheu na planilha)
+                
+                # Exemplo de lógica de status:
+                # Na prática, você integrará a planilha via biblioteca 'pandas', mas visualmente funcionará assim:
+                
+                status_trabalho = "Correções"  # <--- É este valor que a planilha trará automaticamente do seu controle!
+                
+                if status_trabalho == "Em Análise":
+                    st.warning("⏳ **Status Atual:** Recebido / Em Análise pela Banca Científica.")
+                    st.write("Seu trabalho foi entregue e está passando pela avaliação dos pares. Acompanhe seu e-mail.")
+                    
+                elif status_trabalho == "Aprovado":
+                    st.success("🎉 **Status Atual:** APROVADO!")
+                    st.write("Parabéns! Seu trabalho foi aceito para apresentação e publicação nos Anais oficiais do evento.")
+                    
+                elif status_trabalho == "Correções":
+                    st.error("⚠️ **Status Atual:** Solicitação de Alterações Pendentes.")
+                    st.markdown("""
+                    O comitê científico revisou seu trabalho e solicitou ajustes estruturais ou textuais. 
+                    * **O que fazer:** Verifique as orientações enviadas para o seu e-mail de cadastro, faça as alterações necessárias no arquivo Word e reenvie a nova versão conforme as instruções da comissão.
+                    """)
             else:
-                st.error("Por favor, digite um e-mail ou título válido para consulta.")
+                st.error("Por favor, digite um e-mail válido para realizar a consulta.")
 
 # --- 5. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
