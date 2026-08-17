@@ -57,7 +57,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         * **Público-alvo:** Estudantes, docentes, profissionais e pesquisadores.
         * **Investimento:** 
           * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
-          * Participantes Externos (Estudantes, Docentes e Profissionais): **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
+          * Participantes Externos (Estudantes, Docentes e Profissionais): **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificosc@gmail.com`).
         * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
         """)
         
@@ -74,7 +74,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         
         st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby (Aguardando Confirmação)** até que a equipe financeira valide o comprovante de PIX enviado no formulário em relação à chave: `eventoscientificospucgoias@hotmail.com`.")
         st.write("")
-        st.link_button("🔗 Inscrever-se na Jornada Científica", "https://forms.gle/4bSypbzykj1FEpR4A")
+        st.link_button("🔗 Inscrever-se na Jornada Científica", "https://forms.gle/5JUf2bqE2FLq541f8")
         st.caption("Após o envio, sua inscrição será processada pela organização.")
         
     elif "Minicurso Prático" in evento_selecionado:
@@ -82,7 +82,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.write("""
         * **Encerrado; em breve nova turma**
         * **Carga Horária:** 4 horas práticas.
-        * **Investimento:** R$ 30,00 (Vagas limitadas). Pagamento via PIX para `eventoscientificospucgoias@hotmail.com`.
+        * **Investimento:** R$ 30,00 (Vagas limitadas). Pagamento via PIX para `eventoscientificosc@gmail.com`.
         * **Certificação:** Certificado emitido pela Pró-Reitoria de Extensão da PUC Goiás.
         """)
         st.link_button("🔗 Inscrever-se no Minicurso Prático", "https://forms.gle/SEU_LINK_DO_MINICURSO_AQUI")
@@ -173,7 +173,7 @@ elif menu == "✍️ Submissão de Trabalhos":
 
     st.markdown("---")
     st.info("📌 **Importante:** Para que os arquivos sejam salvos diretamente na nuvem da comissão científica e organizados em planilhas, a submissão é feita por formulário dedicado.")
-    st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/wqFaFTRRxj2KwKsp9")
+    st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/ooQUR54Xz5uxwo1x7")
 
 # --- 4. CONSULTAR STATUS DO TRABALHO ---
 elif menu == "🔍 Consultar Status do Trabalho":
@@ -192,7 +192,7 @@ elif menu == "🔍 Consultar Status do Trabalho":
                 try:
                     import pandas as pd
                     
-                    link_planilha = "https://docs.google.com/spreadsheets/d/1wBmZZI6-6WwmrrNsb0L6d2-iyPCZ2WGQUM1xzsylBu8/edit?usp=sharing"
+                    link_planilha = "https://docs.google.com/spreadsheets/d/1X7XoT0ohgtc5DZOw-ezcu0HjPPSaBF-nSrGWOFSVsUY/edit?usp=sharing"
                     
                     if "/edit" in link_planilha:
                         id_planilha = link_planilha.split("/d/")[1].split("/")[0]
@@ -256,7 +256,7 @@ elif menu == "🔍 Consultar Status do Trabalho":
 elif menu == "💳 Taxa de DOI Individual":
     st.subheader("💳 Solicitação e Pagamento de DOI Individual")
     st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 15,00).")
-    st.info("ℹ️ **Chave PIX:** eventoscientificospucgoias@hotmail.com")
+    st.info("ℹ️ **Chave PIX:** eventoscientificosc@gmail.com")
     
     with st.form("form_doi"):
         id_trabalho = st.text_input("Título Exato do Trabalho Aprovado")
