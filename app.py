@@ -91,7 +91,8 @@ elif menu == "✍️ Trabalhos Científicos":
     
     with tab_simples:
         st.markdown("### Normas para Submissão de Resumo Simples")
-        st.markdown("* **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, e Considerações Finais.
+        st.markdown("###
+        * **Estrutura Obrigatória:** Introdução, Objetivos, Metodologia, Resultados e Discussão, e Considerações Finais.
         * **Formatação:** Mínimo de 250 palavras e Máximo de 350 palavras (excluindo título e referências). Fonte Times New Roman, tamanho 12, espaçamento 1,0.
         * **Palavras-chave:** De 3 a 5 palavras-chave separadas por ponto e vírgula.
         * **Autores:** Permitido até 3 autores por trabalho (incluindo o orientador).
@@ -114,7 +115,7 @@ elif menu == "✍️ Trabalhos Científicos":
     
     with tab_expandido:
         st.markdown("### Normas para Submissão de Resumo Expandido")
-        st.markdown("
+        st.markdown("###
         * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
         * **Extensão:** No mínimo 4 páginas e no máximo 7 páginas completas.
         * **Formatação:** Fonte Times New Roman, tamanho 12, espaçamento entre linhas 1,0, recuo de parágrafo de 1,25 cm.
@@ -132,7 +133,7 @@ elif menu == "✍️ Trabalhos Científicos":
                
     with tab_completo:
         st.markdown("### Normas para Submissão de Artigo Completo")
-        st.markdown("
+        st.markdown("###
         * **Estrutura Obrigatória:** Resumo, Palavras-chave, Introdução, Metodologia, Resultados e Discussão, Conclusão, Referências Bibliográficas.
         * **Extensão:** No mínimo 8 páginas e no máximo 16 páginas completas.
         * **Formatação:** Fonte Times New Roman, tamanho 12, espaçamento entre linhas 1,0, recuo de parágrafo de 1,25 cm.
