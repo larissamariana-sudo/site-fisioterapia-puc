@@ -66,7 +66,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.write("**Fisioterapia Musculo Esquelética, Neurológica, Cardiorrespiratória, Terapia Intensiva, Geriatria e Gerontologia, Saúde da Mulher, Saúde Coletiva, Tecnologias e Inteligência Artificial na Saúde e Outras Áreas.**")
         st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby** até a validação do comprovante.")
     
-    # Categorias de inscrição e Cadastro de Trabalhos
+    # Categorias de Inscrição e Cadastro de Trabalhos
     cat = st.radio("Selecione a opção desejada:", [
         "Participante/Ouvinte", 
         "Apresentador de Trabalho", 
@@ -90,7 +90,7 @@ elif menu == "✍️ Trabalhos Científicos":
     tab1, tab2 = st.tabs(["📥 Submissão", "🔍 Consultar Status"])
     with tab1:
         st.write("Consulte as normas e utilize o link do formulário para enviar seu arquivo Word.")
-        st.link_button("📥 Acessar Formulário de Submissão", "https://forms.gle/K9FqzmP3q5KzyYVn8")
+        st.link_button("📥 Acessar Formulário de Submissão", "https://forms.gle/sRzBuCbMzatAcUZH7")
     with tab2:
         st.write("Digite o e-mail cadastrado para verificar o parecer da comissão.")
         email = st.text_input("E-mail cadastrado:")
@@ -102,7 +102,7 @@ elif menu == "🎓 Certificados e Validação":
     st.subheader("🎓 Certificados")
     tab1, tab2 = st.tabs(["📜 Emitir Certificado", "🛡️ Validar Autenticidade"])
     with tab1:
-        cat_cert = st.selectbox("Categoria:", ["Ouvinte (20h)", "Apresentador (5h)", "Banca Avaliadora"])
+        cat_cert = st.selectbox("Categoria:", ["Ouvinte (16h)", "Apresentador (5h)", "Banca Avaliadora"])
         st.link_button("📥 Emitir Certificado", "COLE_LINK_EMISSAO_AQUI")
     with tab2:
         codigo = st.text_input("Digite o código de autenticidade (ex: PUCGO-2026-XXXX):")
