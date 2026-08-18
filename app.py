@@ -30,18 +30,24 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 if menu == "🏠 Início / Sobre":
     mostrar_cabecalho("PORTAL.jpg")
     st.subheader("Bem-vindo ao Portal de Eventos Científicos na Saúde, Humanidades e Áreas Afins")
-    st.write("Central de gestão acadêmica e científica.")
+   st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
+    st.markdown("""
+    * **Inscrições:** Gratuitas para PUC Goiás / Pagas (Standby) para externos mediante envio de comprovante.
+    * **Submissões:** Realizadas via formulário específico com normas detalhadas por modalidade.
+    * **Avaliação:** Acompanhe em tempo real se seu trabalho está em análise, aprovado ou pendente de correções.
+    """)
 
 # --- 2. EVENTOS E INSCRIÇÕES ---
 elif menu == "🎟️ Eventos e Inscrições":
     mostrar_cabecalho("logo_jornada.png.jpg")
-    st.subheader("🎟️ Programação de Eventos")
+   st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
+    st.write("Selecione abaixo o evento de seu interesse para ver os detalhes, normas e realizar a inscrição.")
     
-    evento = st.selectbox("Escolha o Evento:", [
-        "Jornada Científica (Fisioterapia)", 
-        "Minicurso Prático: Terapia Manual", 
-        "Workshop: Inovação em Saúde",
-        "Simpósio de Saúde Coletiva"
+    evento_selecionado = st.selectbox("Escolha o Evento:", [
+        "1. Jornada Científica do Curso de Fisioterapia", 
+        "2. Minicurso Prático: Reabilitação e Terapia Manual", 
+        "3. Workshop: Inovação e Tecnologias em Saúde",
+        "4. Simpósio de Saúde Coletiva e Políticas Públicas"
     ])
     
     st.markdown("---")
