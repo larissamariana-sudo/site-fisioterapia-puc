@@ -74,9 +74,9 @@ elif menu == "🎟️ Eventos e Inscrições":
     if cat == "Participante/Ouvinte":
         st.link_button("🔗 Inscrever-se como Ouvinte", "https://forms.gle/Vcrdj9e8KJQ9Qqo76")
     elif cat == "Apresentador de Trabalho":
-        st.link_button("🔗 Inscrever-se como Apresentador", "COLE_LINK_APRESENTADOR_AQUI")
+        st.link_button("🔗 Inscrever-se como Apresentador", "https://forms.gle/mgLc9iaibDfBYqi78")
     elif cat == "Membro da Banca":
-        st.link_button("🔗 Inscrever-se como Banca", "COLE_LINK_BANCA_AQUI")
+        st.link_button("🔗 Inscrever-se como Banca", "https://forms.gle/mgLc9iaibDfBYqi78")
     else:
         st.info("⚠️ **Exclusivo para Orientadores:** Utilize este formulário para cadastrar o trabalho, estudante e banca para o certificado.")
         st.link_button("📝 Cadastrar Informações do Trabalho", "https://forms.gle/bTGR48dU3rrgBgr17")
