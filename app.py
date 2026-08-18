@@ -232,7 +232,10 @@ elif menu == "🎓 Certificados e Validação":
         st.write("Digite o código de autenticidade (ex: PUCGO-2026-XXXX):")
         codigo = st.text_input("Código:")
         if st.button("Validar"):
-            st.info("Insira o link da planilha para habilitar a validação.")
+            st.info("Aguardando configuração do link da planilha de certificados.")
+            # Se você quiser que o botão Validar também consulte a planilha,
+            # adicione a lógica 'try/except' igual fizemos na aba de Status do Trabalho.
+
 
 # --- 5. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
