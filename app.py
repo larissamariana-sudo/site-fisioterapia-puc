@@ -199,7 +199,7 @@ elif menu == "🎓 Certificados e Validação":
     
     with tab1:
         st.write("Selecione a categoria para receber seu certificado:")
-        cat_cert = st.selectbox("Categoria:", ["Ouvinte (20h)", "Apresentador (5h)", "Banca Avaliadora"])
+        cat_cert = st.selectbox("Categoria:", ["Ouvinte (16h)", "Apresentador (5h)", "Banca Avaliadora"])
         st.link_button("📥 Emitir Certificado", "LINK_CERTIFICADOS")
         
     with tab2:
@@ -207,18 +207,6 @@ elif menu == "🎓 Certificados e Validação":
         codigo = st.text_input("Código:")
         if st.button("Validar"):
             st.info("Insira o link da planilha para habilitar a validação.")
-
-# --- 4. CERTIFICADOS (EMISSÃO + VALIDAÇÃO) ---
-elif menu == "🎓 Certificados e Validação":
-    st.subheader("🎓 Certificados")
-    tab1, tab2 = st.tabs(["📜 Emitir Certificado", "🛡️ Validar Autenticidade"])
-    with tab1:
-        st.selectbox("Categoria:", ["Ouvinte (16h)", "Apresentador (5h)", "Banca Avaliadora"])
-        st.link_button("📥 Emitir Certificado", "COLE_LINK_EMISSAO_AQUI")
-    with tab2:
-        codigo = st.text_input("Digite o código de autenticidade (ex: PUCGO-2026-XXXX):")
-        if st.button("Validar"):
-            st.info("Insira o link da planilha de certificados para habilitar a validação.")
 
 # --- 5. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
