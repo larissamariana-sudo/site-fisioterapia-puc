@@ -90,12 +90,12 @@ elif menu == "✍️ Trabalhos Científicos":
     tab1, tab2 = st.tabs(["📥 Submissão", "🔍 Consultar Status"])
     with tab1:
         st.write("Consulte as normas e utilize o link do formulário para enviar seu arquivo Word.")
-        st.link_button("📥 Acessar Formulário de Submissão", "COLE_LINK_SUBMISSAO_AQUI")
+        st.link_button("📥 Acessar Formulário de Submissão", "https://forms.gle/K9FqzmP3q5KzyYVn8")
     with tab2:
         st.write("Digite o e-mail cadastrado para verificar o parecer da comissão.")
         email = st.text_input("E-mail cadastrado:")
         if st.button("Consultar Status"):
-            st.info("Insira o link da planilha da comissão científica no código para habilitar esta função.")
+            st.info("https://docs.google.com/spreadsheets/d/1X7XoT0ohgtc5DZOw-ezcu0HjPPSaBF-nSrGWOFSVsUY/edit?usp=sharing")
 
 # --- 4. CERTIFICADOS (EMISSÃO + VALIDAÇÃO) ---
 elif menu == "🎓 Certificados e Validação":
