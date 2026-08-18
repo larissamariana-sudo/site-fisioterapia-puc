@@ -39,7 +39,7 @@ if menu == "🏠 Início / Sobre":
 
 # --- 2. EVENTOS E INSCRIÇÕES ---
 elif menu == "🎟️ Eventos e Inscrições":
-    mostrar_cabecalho("logo_jornada.png.jpg")
+    mostrar_cabecalho("PORTAL.jpg")
     st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
     st.write("Selecione abaixo o evento de seu interesse para ver os detalhes, normas e realizar a inscrição.")
     
@@ -53,6 +53,7 @@ elif menu == "🎟️ Eventos e Inscrições":
     st.markdown("---")
     
     if "Jornada Científica" in evento_selecionado:
+        mostrar_cabecalho("logo_jornada.png.jpg")
         st.markdown("### 🩺 Jornada Científica do Curso de Fisioterapia")
         st.write("""
         * **Público-alvo:** Estudantes, docentes, profissionais e pesquisadores.
