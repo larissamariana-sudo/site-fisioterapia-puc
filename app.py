@@ -160,7 +160,7 @@ elif menu == "✍️ Trabalhos Científicos":
 
         st.markdown("---")
         st.info("📌 **Importante:** Para que os arquivos sejam salvos diretamente na nuvem da comissão científica, a submissão é feita por formulário dedicado.")
-        st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "COLE_LINK_SUBMISSAO_AQUI")
+        st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/UUmLAAEdCwY9JRrY6")
 
     with tab_principal2:
         st.write("Digite o seu e-mail cadastrado na submissão para verificar o parecer atual da comissão científica.")
@@ -176,7 +176,7 @@ elif menu == "✍️ Trabalhos Científicos":
                     try:
                         import pandas as pd
                         # Cole aqui o link da sua planilha
-                        link_planilha = "COLE_LINK_PLANILHA_AQUI"
+                        link_planilha = "https://docs.google.com/spreadsheets/d/1X7XoT0ohgtc5DZOw-ezcu0HjPPSaBF-nSrGWOFSVsUY/edit?usp=sharing"
                         
                         if "/edit" in link_planilha:
                             id_planilha = link_planilha.split("/d/")[1].split("/")[0]
