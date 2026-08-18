@@ -126,6 +126,9 @@ elif menu == "✍️ Trabalhos Científicos":
             * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
             * **Citações e Referências:** Devem seguir as normas da ABNT (NBR 10520:2023 e NBR 6023:2023).
             * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
+            * **Título:** Alinhado à esquerda, em caixa alta e negrito.
+            * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
+            * **Instituição:** 1;2 Pontifícia Universidade Católica de Goiás.
             
             **INFORMAÇÕES PARA A SUBMISSÃO**
             * **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
@@ -144,6 +147,9 @@ elif menu == "✍️ Trabalhos Científicos":
             * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
             * **Citações e Referências:** Devem seguir as normas da ABNT (NBR 10520:2023 e NBR 6023:2023).
             * **Figuras e Tabelas:** Permitido até 2 elementos ilustrativos inseridos no corpo do texto.
+            * **Título:** Alinhado à esquerda, em caixa alta e negrito.
+            * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
+            * **Instituição:** 1;2 Pontifícia Universidade Católica de Goiás.
             
             **INFORMAÇÕES PARA A SUBMISSÃO**
             * **Formato:** Todos os trabalhos devem ser submetidos obrigatoriamente em arquivo formato WORD.
