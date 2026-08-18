@@ -1,17 +1,17 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Eventos Científicos | PUC Goiás",
+    page_title="Eventos Científicos | Saúde, Humanidades e Áreas Afins",
     page_icon="🩺",
     layout="wide"
 )
 
 # --- FUNÇÕES DE ESTILO ---
-def mostrar_cabecalho(foto="logo_jornada.png.jpg"):
+def mostrar_cabecalho(foto="PORTAL.jpg"):
     st.image(foto, use_container_width=True)
     st.markdown("""
         <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white;'>
-            <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Humanidades e Áreas Afins — PUC Goiás</h1>
+            <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Humanidades e Áreas Afins</h1>
         </div>
     """, unsafe_allow_html=True)
     st.write("")
@@ -29,8 +29,8 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
     mostrar_cabecalho("PORTAL.jpg")
-    st.subheader("Bem-vindo ao Portal de Eventos Científicos da FST da PUC Goiás")
-    st.write("Central oficial de gestão acadêmica e científica.")
+    st.subheader("Bem-vindo ao Portal de Eventos Científicos na Saúde, Humanidades e Áreas Afins")
+    st.write("Central de gestão acadêmica e científica.")
 
 # --- 2. EVENTOS E INSCRIÇÕES ---
 elif menu == "🎟️ Eventos e Inscrições":
