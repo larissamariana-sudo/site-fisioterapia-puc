@@ -92,7 +92,7 @@ elif menu == "✍️ Trabalhos Científicos":
             * **Título:** Alinhado à esquerda, em caixa alta e negrito.
             * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
             * **Instituição:** Nome da Instituição de vínculo.Consulte abaixo as normas e utilize o link do formulário exclusivo para enviar o seu arquivo Word (.doc/.docx).")
-    
+                """)
     # Criamos as abas principais da página
     tab_principal1, tab_principal2 = st.tabs(["📥 Submissão e Normas", "🔍 Consultar Status"])
     
