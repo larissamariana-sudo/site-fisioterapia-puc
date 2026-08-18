@@ -162,39 +162,45 @@ elif menu == "✍️ Trabalhos Científicos":
         st.info("📌 **Importante:** Para que os arquivos sejam salvos diretamente na nuvem da comissão científica, a submissão é feita por formulário dedicado.")
         st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/UUmLAAEdCwY9JRrY6")
   
-        with tab_principal2:
-        st.write("Digite o seu e-mail cadastrado na submissão para verificar o parecer atual da comissão científica.")
-        
-        with st.form("form_status"):
-            email_busca = st.text_input("Digite o seu E-mail cadastrado:").strip().lower()
-            consultar = st.form_submit_button("Consultar Status")
-            
-            if consultar:
-                if email_busca:
-                    st.markdown("---")
-                    st.info(f"🔎 Buscando parecer para o e-mail: **{email_busca}**")
-                    
-                    try:
-                        import pandas as pd
-                        # Cole aqui o link da sua planilha
-                        link_planilha = "COLE_LINK_PLANILHA_AQUI"
-                        
-                        if "/edit" in link_planilha:
-                            id_planilha = link_planilha.split("/d/")[1].split("/")[0]
-                            url_csv = f"https://docs.google.com/spreadsheets/d/{id_planilha}/export?format=csv"
-                        else:
-                            url_csv = link_planilha
-                        
+       # Lê os dados da planilha
                         df = pd.read_csv(url_csv)
-                        # ... (lógica de leitura da planilha mantida) ...
-                        st.success("O sistema está pronto para ler sua planilha. Certifique-se de configurar o link acima.")
-                    except Exception as e:
-                        st.error(f"Erro ao ler a planilha: {e}")
-                else:
-                    st.error("Por favor, digite um e-mail válido.")
-                  
-                         
-                            
+                        
+                        # A coluna C é o índice 2 (A=0, B=1, C=2)
+                        # Vamos renomear a 3ª coluna para 'email_col' para garantir que achamos
+                        df.columns.values[2] = 'coluna_email_c'
+                        coluna_email = 'coluna_email_c'
+                        
+                        # O mesmo para a coluna de Status (ajuste o número se Status não for a próxima, 
+                        # mas aqui vamos procurar pelo nome 'Status' no restante das colunas)
+                        coluna_status = next((col for col in df.columns if 'status' in col.lower()), None)
+                        
+                        # Filtra pelo e-mail na coluna C
+                        df[coluna_email] = df[coluna_email].astype(str).str.strip().str.lower()
+                        resultado = df[df[coluna_email] == email_busca]
+                        
+                        if not resultado.empty:
+                            if coluna_status:
+                                # Pega o valor da linha encontrada na coluna de Status
+                                status_val = str(resultado.iloc[0][coluna_status]).strip()
+                                
+                                # Se estiver vazio ou for 'nan' (do pandas), define como Recebido
+                                if status_val.lower() == 'nan' or status_val == "":
+                                    status_final = "Recebido"
+                                else:
+                                    status_final = status_val
+                                
+                                # Lógica de exibição (mantida)
+                                if "aprovado" in status_final.lower():
+                                    st.success(f"🎉 **Status:** {status_final}")
+                                elif "correção" in status_final.lower():
+                                    st.error(f"⚠️ **Status:** {status_final} - Verifique seu e-mail.")
+                                else:
+                                    st.info(f"⏳ **Status:** {status_final}")
+                            else:
+                                st.warning("E-mail encontrado, mas a coluna 'Status' não foi localizada.")
+                        else:
+                            st.warning("E-mail não encontrado na Coluna C da planilha.")
+                                                                      
 # --- 4. CERTIFICADOS (EMISSÃO + VALIDAÇÃO) ---
 elif menu == "🎓 Certificados e Validação":
     st.subheader("🎓 Certificados")
