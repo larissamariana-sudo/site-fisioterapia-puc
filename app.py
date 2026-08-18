@@ -63,7 +63,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
         """)
         st.markdown("### **EIXOS TEMÁTICOS**")
-        st.write("**Fisioterapia Musculo Esquelética, Neurológica, Cardiorrespiratória, Terapia Intensiva, Geriatria e Gerontologia, Saúde da Mulher, Saúde Coletiva, Tecnologias em Saúde e Outras Áreas.**")
+        st.write("**Fisioterapia Musculo Esquelética, Neurológica, Cardiorrespiratória, Terapia Intensiva, Geriatria e Gerontologia, Saúde da Mulher, Saúde Coletiva, Tecnologias e Inteligência Artificial na Saúde e Outras Áreas.**")
         st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby** até a validação do comprovante.")
     
     # Categorias de inscrição e Cadastro de Trabalhos
@@ -75,14 +75,14 @@ elif menu == "🎟️ Eventos e Inscrições":
     ])
     
     if cat == "Participante/Ouvinte":
-        st.link_button("🔗 Inscrever-se como Ouvinte", "COLE_LINK_OUVINTE_AQUI")
+        st.link_button("🔗 Inscrever-se como Ouvinte", "https://forms.gle/pimCxShsFgc9tg5d9")
     elif cat == "Apresentador de Trabalho":
-        st.link_button("🔗 Inscrever-se como Apresentador", "COLE_LINK_APRESENTADOR_AQUI")
+        st.link_button("🔗 Inscrever-se como Apresentador", "https://forms.gle/mgLc9iaibDfBYqi78")
     elif cat == "Membro da Banca":
-        st.link_button("🔗 Inscrever-se como Banca", "COLE_LINK_BANCA_AQUI")
+        st.link_button("🔗 Inscrever-se como Banca", "https://forms.gle/mgLc9iaibDfBYqi78")
     else:
-        st.info("⚠️ **Exclusivo para Orientadores:** Utilize este formulário para cadastrar o título do trabalho, nome do estudante e os membros da banca examinadora para geração do certificado.")
-        st.link_button("📝 Cadastrar Informações do Trabalho", "COLE_LINK_CADASTRO_TRABALHO_AQUI")
+        st.info("⚠️ **Exclusivo para Orientadores:** Utilize este formulário para cadastrar o título do trabalho, nome completo do estudante e dos membros da banca examinadora para geração do certificado.")
+        st.link_button("📝 Cadastrar Informações do Trabalho", "https://forms.gle/bTGR48dU3rrgBgr17")
 
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
 elif menu == "✍️ Trabalhos Científicos":
