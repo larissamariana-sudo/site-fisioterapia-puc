@@ -171,26 +171,57 @@ elif menu == "✍️ Trabalhos Científicos":
             if consultar:
                 if email_busca:
                     st.markdown("---")
-                    st.info(f"🔎 Buscando parecer para o e-mail: **{email_busca}**")
+                    st.info(f"🔎 Buscando parecer para: **{email_busca}**")
                     
                     try:
                         import pandas as pd
-                        # Cole aqui o link da sua planilha
                         link_planilha = "https://docs.google.com/spreadsheets/d/1X7XoT0ohgtc5DZOw-ezcu0HjPPSaBF-nSrGWOFSVsUY/edit?usp=sharing"
                         
-                        if "/edit" in link_planilha:
-                            id_planilha = link_planilha.split("/d/")[1].split("/")[0]
-                            url_csv = f"https://docs.google.com/spreadsheets/d/{id_planilha}/export?format=csv"
-                        else:
-                            url_csv = link_planilha
+                        # Converte para CSV
+                        id_planilha = link_planilha.split("/d/")[1].split("/")[0]
+                        url_csv = f"https://docs.google.com/spreadsheets/d/{id_planilha}/export?format=csv"
                         
                         df = pd.read_csv(url_csv)
-                        # ... (lógica de leitura da planilha mantida) ...
-                        st.success("O sistema está pronto para ler sua planilha. Certifique-se de configurar o link acima.")
+                        df.columns = df.columns.str.strip() # Limpa espaços nos nomes das colunas
+                        
+                        # Busca a coluna de e-mail (ajuste conforme o nome real na sua planilha)
+                        coluna_email = next((col for col in df.columns if 'email' in col.lower()), None)
+                        
+                        if coluna_email:
+                            df[coluna_email] = df[coluna_email].astype(str).str.strip().str.lower()
+                            resultado = df[df[coluna_email] == email_busca]
+                            
+                            if not resultado.empty:
+                                # Busca coluna Status
+                                coluna_status = next((col for col in df.columns if 'status' in col.lower()), None)
+                                
+                                if coluna_status:
+                                    status_val = str(resultado.iloc[0][coluna_status]).strip()
+                                    
+                                    # Se a célula estiver vazia (nan), define como "Recebido"
+                                    if status_val.lower() == 'nan' or status_val == "":
+                                        status_final = "Recebido"
+                                    else:
+                                        status_final = status_val
+                                    
+                                    # Lógica de exibição
+                                    if "aprovado" in status_final.lower():
+                                        st.success(f"🎉 **Status:** {status_final} - Parabéns!")
+                                    elif "correção" in status_final.lower():
+                                        st.error(f"⚠️ **Status:** {status_final} - Verifique seu e-mail.")
+                                    else:
+                                        st.info(f"⏳ **Status:** {status_final}")
+                                else:
+                                    st.warning("E-mail encontrado, mas a coluna 'Status' não existe na planilha.")
+                            else:
+                                st.warning("E-mail não encontrado na base de dados.")
+                        else:
+                            st.error("Coluna de e-mail não encontrada. Verifique o nome na planilha.")
+                            
                     except Exception as e:
-                        st.error(f"Erro ao ler a planilha: {e}")
+                        st.error(f"Erro ao ler planilha: {e}")
                 else:
-                    st.error("Por favor, digite um e-mail válido.")
+                    st.error("Por favor, digite um e-mail.")
 
 # --- 4. CERTIFICADOS (EMISSÃO + VALIDAÇÃO) ---
 elif menu == "🎓 Certificados e Validação":
