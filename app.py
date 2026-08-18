@@ -32,6 +32,7 @@ if menu == "🏠 Início / Sobre":
     st.subheader("Bem-vindo ao Portal de Eventos Científicos na Saúde, Humanidades e Áreas Afins")
    st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
     st.markdown("""
+    
     * **Inscrições:** Gratuitas para PUC Goiás / Pagas (Standby) para externos mediante envio de comprovante.
     * **Submissões:** Realizadas via formulário específico com normas detalhadas por modalidade.
     * **Avaliação:** Acompanhe em tempo real se seu trabalho está em análise, aprovado ou pendente de correções.
