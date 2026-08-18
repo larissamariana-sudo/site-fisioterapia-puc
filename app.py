@@ -86,11 +86,9 @@ elif menu == "✍️ Trabalhos Científicos":
     st.subheader("✍️ Central de Trabalhos Científicos")
     st.write("Consulte abaixo as normas e utilize o link do formulário exclusivo para enviar o seu arquivo Word (.doc/.docx).")
     
-    # Criamos as abas principais da página
     tab_principal1, tab_principal2 = st.tabs(["📥 Submissão e Normas", "🔍 Consultar Status"])
     
     with tab_principal1:
-        # Sub-abas dentro de Submissão
         tab_simples, tab_expandido, tab_completo = st.tabs(["📄 Resumo Simples", "📑 Resumo Expandido", "📚 Artigo Completo"])
         
         with tab_simples:
@@ -108,7 +106,7 @@ elif menu == "✍️ Trabalhos Científicos":
             * **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
             
             **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-            * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
+            * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir une linha em branco. 
             * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
             * **Alinhamento:** Justificado.
             * **Título:** Alinhado à esquerda, em caixa alta e negrito.
@@ -161,8 +159,8 @@ elif menu == "✍️ Trabalhos Científicos":
         st.markdown("---")
         st.info("📌 **Importante:** Para que os arquivos sejam salvos diretamente na nuvem da comissão científica, a submissão é feita por formulário dedicado.")
         st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/UUmLAAEdCwY9JRrY6")
-  
-with tab_principal2:
+    
+    with tab_principal2:
         st.write("Digite o seu e-mail cadastrado na submissão para verificar o parecer atual da comissão científica.")
         with st.form("form_status"):
             email_busca = st.text_input("Digite o seu E-mail cadastrado:").strip().lower()
@@ -174,7 +172,6 @@ with tab_principal2:
                     st.info(f"🔎 Buscando parecer para: **{email_busca}**")
                     
                     try:
-                        import pandas as pd
                         link_planilha = "https://docs.google.com/spreadsheets/d/1X7XoT0ohgtc5DZOw-ezcu0HjPPSaBF-nSrGWOFSVsUY/edit?usp=sharing"
                         
                         id_planilha = link_planilha.split("/d/")[1].split("/")[0]
@@ -182,11 +179,9 @@ with tab_principal2:
                         
                         df = pd.read_csv(url_csv)
                         
-                        # Forçamos a leitura da Coluna C (índice 2) como e-mail
                         df.columns.values[2] = 'email_col'
                         coluna_email = 'email_col'
                         
-                        # Busca a coluna Status
                         coluna_status = next((col for col in df.columns if 'status' in col.lower()), None)
                         
                         df[coluna_email] = df[coluna_email].astype(str).str.strip().str.lower()
@@ -196,7 +191,6 @@ with tab_principal2:
                             if coluna_status:
                                 status_val = str(resultado.iloc[0][coluna_status]).strip()
                                 
-                                # Define "Recebido" se estiver vazio
                                 if status_val.lower() == 'nan' or status_val == "":
                                     status_final = "Recebido"
                                 else:
@@ -233,9 +227,6 @@ elif menu == "🎓 Certificados e Validação":
         codigo = st.text_input("Código:")
         if st.button("Validar"):
             st.info("Aguardando configuração do link da planilha de certificados.")
-            # Se você quiser que o botão Validar também consulte a planilha,
-            # adicione a lógica 'try/except' igual fizemos na aba de Status do Trabalho.
-
 
 # --- 5. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
