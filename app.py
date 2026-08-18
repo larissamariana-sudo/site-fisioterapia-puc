@@ -163,7 +163,7 @@ elif menu == "✍️ Trabalhos Científicos":
         st.link_button("📥 Clique aqui para acessar o Formulário de Submissão de Trabalhos", "https://forms.gle/UUmLAAEdCwY9JRrY6")
   
        # Lê os dados da planilha
-                        df = pd.read_csv(https://docs.google.com/spreadsheets/d/1X7XoT0ohgtc5DZOw-ezcu0HjPPSaBF-nSrGWOFSVsUY/edit?usp=sharing)
+                        df = pd.read_csv(url_csv)
                         
                         # A coluna C é o índice 2 (A=0, B=1, C=2)
                         # Vamos renomear a 3ª coluna para 'email_col' para garantir que achamos
