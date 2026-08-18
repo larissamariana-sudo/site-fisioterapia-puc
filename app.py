@@ -81,7 +81,7 @@ elif menu == "🎟️ Eventos e Inscrições":
     elif cat == "Membro da Banca":
         st.link_button("🔗 Inscrever-se como Banca", "https://forms.gle/mgLc9iaibDfBYqi78")
     else:
-        st.info("⚠️ **Exclusivo para Orientadores:** Utilize este formulário para cadastrar o título do trabalho, nome completo do estudante e dos membros da banca examinadora para geração do certificado.")
+        st.info("⚠️ **Exclusivo para Orientadores:** Utilize este formulário para cadastrar o título do trabalho, nome completo do estudante e dos membros da banca examinadora, para elaboração do certificado.")
         st.link_button("📝 Cadastrar Informações do Trabalho", "https://forms.gle/bTGR48dU3rrgBgr17")
 
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
