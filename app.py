@@ -233,7 +233,7 @@ elif menu == "💳 Taxa de DOI Individual":
     st.subheader("💳 Solicitação e Pagamento de DOI Individual")
     st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 15,00).")
     st.info("ℹ️ **Chave PIX:** eventoscientificosc@gmail.com")
-    st.link_button("🔗 Link para Solicitação DOI", "COLE_LINK_DOI_AQUI")
+    st.link_button("🔗 Link para Solicitação DOI", "https://forms.gle/ZjKAcp7LuK8zFFub8")
 
 # --- 6. ANAIS ---
 elif menu == "📚 Anais Publicados":
