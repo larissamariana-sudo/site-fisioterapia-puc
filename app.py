@@ -59,7 +59,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         * **Público-alvo:** Estudantes, docentes, profissionais e pesquisadores.
         * **Investimento:** 
           * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
-          * Participantes Externos: **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
+          * Participantes Externos: **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificosc@gmail.com`).
         * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
         """)
         st.markdown("### **EIXOS TEMÁTICOS**")
