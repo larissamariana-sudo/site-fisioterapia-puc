@@ -84,7 +84,8 @@ elif menu == "🎟️ Eventos e Inscrições":
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
 elif menu == "✍️ Trabalhos Científicos":
     st.subheader("✍️ Central de Trabalhos Científicos")
-    st.write("            **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
+    st.write("       
+    **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
             * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
             * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
             * **Alinhamento:** Justificado.
