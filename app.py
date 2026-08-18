@@ -74,7 +74,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.link_button("🔗 Inscrever-se como Apresentador", "COLE_LINK_APRESENTADOR_AQUI")
     else:
         st.link_button("🔗 Inscrever-se como Banca", "COLE_LINK_BANCA_AQUI")
-        
+  
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
 elif menu == "✍️ Trabalhos Científicos":
     st.subheader("✍️ Central de Trabalhos Científicos")
