@@ -113,7 +113,7 @@ elif menu == "✍️ Trabalhos Científicos":
             * **Alinhamento:** Justificado.
             * **Título:** Alinhado à esquerda, em caixa alta e negrito.
             * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
-            * **Instituição:** 1;2 Pontifícia Universidade Católica de Goiás.
+            * **Instituição:** nome da instituição de vívulo.
             """)
             st.info("💡 Ideal para resumos de trabalhos que exigem ineditismo, relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
         
