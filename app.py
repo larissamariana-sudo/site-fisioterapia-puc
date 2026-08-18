@@ -84,15 +84,8 @@ elif menu == "🎟️ Eventos e Inscrições":
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
 elif menu == "✍️ Trabalhos Científicos":
     st.subheader("✍️ Central de Trabalhos Científicos")
-    st.write("       
-    **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-            * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
-            * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
-            * **Alinhamento:** Justificado.
-            * **Título:** Alinhado à esquerda, em caixa alta e negrito.
-            * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
-            * **Instituição:** Nome da Instituição de vínculo.Consulte abaixo as normas e utilize o link do formulário exclusivo para enviar o seu arquivo Word (.doc/.docx).")
-                """)
+    st.write("Consulte abaixo as normas e utilize o link do formulário exclusivo para enviar o seu arquivo Word (.doc/.docx).")
+    
     # Criamos as abas principais da página
     tab_principal1, tab_principal2 = st.tabs(["📥 Submissão e Normas", "🔍 Consultar Status"])
     
@@ -120,7 +113,7 @@ elif menu == "✍️ Trabalhos Científicos":
             * **Alinhamento:** Justificado.
             * **Título:** Alinhado à esquerda, em caixa alta e negrito.
             * **Autores:** Primeiro nome (acadêmico); segundo nome (orientador). Escritos de forma corrida, separados por ponto e vírgula, em caixa alta. Ex.: Maria de Oliveira1; Antônio da Silva2.
-            * **Instituição:** Nome da Instituição de vínculo.
+            * **Instituição:** 1;2 Pontifícia Universidade Católica de Goiás.
             """)
             st.info("💡 Ideal para resumos de trabalhos que exigem ineditismo, relatos de experiência, pesquisas em andamento ou revisões bibliográficas preliminares.")
         
