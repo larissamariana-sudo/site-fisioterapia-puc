@@ -63,7 +63,7 @@ elif menu == "🎟️ Eventos e Inscrições":
         * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
         """)
         st.markdown("### **EIXOS TEMÁTICOS**")
-        st.write("Fisioterapia Ortopédica, Terapia Intensiva, Neurológica, Saúde da Mulher, Saúde Coletiva, Tecnologias em Saúde e Outras Áreas.")
+        st.write("**Fisioterapia Musculo Esquelética, Neurológica, Cardiorrespiratória, Terapia Intensiva, Geriatria e Gerontologia, Saúde da Mulher, Saúde Coletiva, Tecnologias em Saúde e Outras Áreas.**")
         st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby** até a validação do comprovante.")
     
     # Categorias de inscrição
