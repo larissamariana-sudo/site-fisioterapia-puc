@@ -30,9 +30,8 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 if menu == "🏠 Início / Sobre":
     mostrar_cabecalho("PORTAL.jpg")
     st.subheader("Bem-vindo ao Portal de Eventos Científicos na Saúde, Humanidades e Áreas Afins")
-   st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
+    st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
     st.markdown("""
-    
     * **Inscrições:** Gratuitas para PUC Goiás / Pagas (Standby) para externos mediante envio de comprovante.
     * **Submissões:** Realizadas via formulário específico com normas detalhadas por modalidade.
     * **Avaliação:** Acompanhe em tempo real se seu trabalho está em análise, aprovado ou pendente de correções.
@@ -41,7 +40,7 @@ if menu == "🏠 Início / Sobre":
 # --- 2. EVENTOS E INSCRIÇÕES ---
 elif menu == "🎟️ Eventos e Inscrições":
     mostrar_cabecalho("logo_jornada.png.jpg")
-   st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
+    st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
     st.write("Selecione abaixo o evento de seu interesse para ver os detalhes, normas e realizar a inscrição.")
     
     evento_selecionado = st.selectbox("Escolha o Evento:", [
@@ -52,15 +51,28 @@ elif menu == "🎟️ Eventos e Inscrições":
     ])
     
     st.markdown("---")
-    # Categorias de inscrição
-    cat = st.radio("Selecione sua categoria:", ["Participante/Ouvinte", "Apresentador de Trabalho", "Membro da Banca"])
     
+    if "Jornada Científica" in evento_selecionado:
+        st.markdown("### 🩺 Jornada Científica do Curso de Fisioterapia")
+        st.write("""
+        * **Público-alvo:** Estudantes, docentes, profissionais e pesquisadores.
+        * **Investimento:** 
+          * Estudantes, Docentes e Banca da PUC Goiás: **Gratuito**.
+          * Participantes Externos: **R$ 10,00** (Standby mediante comprovante na chave `eventoscientificospucgoias@hotmail.com`).
+        * **Destaque:** Permite submissão de Resumos Simples, Expandidos e Artigos Completos com ISBN gratuito.
+        """)
+        st.markdown("### **EIXOS TEMÁTICOS**")
+        st.write("Fisioterapia Ortopédica, Terapia Intensiva, Neurológica, Saúde da Mulher, Saúde Coletiva, Tecnologias em Saúde e Outras Áreas.")
+        st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby** até a validação do comprovante.")
+    
+    # Categorias de inscrição
+    cat = st.radio("Selecione sua categoria para realizar a inscrição:", ["Participante/Ouvinte", "Apresentador de Trabalho", "Membro da Banca"])
     if cat == "Participante/Ouvinte":
-        st.link_button("🔗 Inscrever-se como Ouvinte", "LINK_OUVINTE")
+        st.link_button("🔗 Inscrever-se como Ouvinte", "COLE_LINK_OUVINTE_AQUI")
     elif cat == "Apresentador de Trabalho":
-        st.link_button("🔗 Inscrever-se como Apresentador", "LINK_APRESENTADOR")
+        st.link_button("🔗 Inscrever-se como Apresentador", "COLE_LINK_APRESENTADOR_AQUI")
     else:
-        st.link_button("🔗 Inscrever-se como Banca", "LINK_BANCA")
+        st.link_button("🔗 Inscrever-se como Banca", "COLE_LINK_BANCA_AQUI")
 
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
 elif menu == "✍️ Trabalhos Científicos":
@@ -68,14 +80,15 @@ elif menu == "✍️ Trabalhos Científicos":
     tab1, tab2 = st.tabs(["📥 Submissão", "🔍 Consultar Status"])
     
     with tab1:
-        st.write("Envie seu arquivo Word (.doc/.docx) via formulário.")
-        st.link_button("📥 Acessar Formulário de Submissão", "LINK_SUBMISSAO")
+        st.write("Consulte abaixo as normas e utilize o link do formulário exclusivo para enviar o seu arquivo Word.")
+        # [Aqui entrariam os tabs de Resumos Simples/Expandido/Completo que você tinha]
+        st.link_button("📥 Acessar Formulário de Submissão", "COLE_LINK_SUBMISSAO_AQUI")
         
     with tab2:
-        st.write("Consulte o parecer da comissão científica.")
+        st.write("Digite o seu e-mail cadastrado para verificar o parecer da comissão científica.")
         email = st.text_input("E-mail cadastrado:")
-        if st.button("Consultar"):
-            st.warning("Insira o link da planilha aqui para habilitar a consulta.")
+        if st.button("Consultar Status"):
+            st.info("Insira o link da planilha da comissão científica no código para habilitar esta função.")
 
 # --- 4. CERTIFICADOS (EMISSÃO + VALIDAÇÃO) ---
 elif menu == "🎓 Certificados e Validação":
@@ -83,25 +96,26 @@ elif menu == "🎓 Certificados e Validação":
     tab1, tab2 = st.tabs(["📜 Emitir Certificado", "🛡️ Validar Autenticidade"])
     
     with tab1:
-        st.write("Selecione a categoria para receber seu certificado:")
         cat_cert = st.selectbox("Categoria:", ["Ouvinte (20h)", "Apresentador (5h)", "Banca Avaliadora"])
-        st.link_button("📥 Emitir Certificado", "LINK_CERTIFICADOS")
+        st.link_button("📥 Emitir Certificado", "COLE_LINK_EMISSAO_AQUI")
         
     with tab2:
-        st.write("Digite o código de autenticidade (ex: PUCGO-2026-XXXX):")
-        codigo = st.text_input("Código:")
+        codigo = st.text_input("Digite o código de autenticidade (ex: PUCGO-2026-XXXX):")
         if st.button("Validar"):
-            st.info("Insira o link da planilha para habilitar a validação.")
+            st.info("Insira o link da planilha de certificados para habilitar a validação.")
 
 # --- 5. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
-    st.subheader("💳 Solicitação de DOI")
-    st.link_button("🔗 Solicitar DOI", "LINK_DOI")
+    st.subheader("💳 Solicitação e Pagamento de DOI Individual")
+    st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 15,00).")
+    st.info("ℹ️ **Chave PIX:** eventoscientificospucgoias@hotmail.com")
+    st.link_button("🔗 Link para Solicitação DOI", "COLE_LINK_DOI_AQUI")
 
 # --- 6. ANAIS ---
 elif menu == "📚 Anais Publicados":
-    st.subheader("📚 Repositório de Anais")
-    st.link_button("📥 Baixar Anais", "LINK_ANAIS")
+    st.subheader("📚 Repositório Oficial de Anais")
+    st.write("Acesse abaixo os cadernos de resumos e anais oficiais.")
+    st.link_button("📥 Baixar Anais", "COLE_LINK_PDF_ANAIS_AQUI")
 
 # --- RODAPÉ ---
 st.markdown("---")
