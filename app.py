@@ -70,9 +70,9 @@ elif menu == "🎟️ Eventos e Inscrições":
     cat = st.radio("Selecione sua categoria para realizar a inscrição:", ["Participante/Ouvinte", "Apresentador de Trabalho", "Membro da Banca"])
     if cat == "Participante/Ouvinte":
         st.link_button("🔗 Inscrever-se como Ouvinte", "https://forms.gle/Vcrdj9e8KJQ9Qqo76")
-    elif cat == "Apresentador de Trabalho":
+    if cat == "Apresentador de Trabalho":
         st.link_button("🔗 Inscrever-se como Apresentador", "COLE_LINK_APRESENTADOR_AQUI")
-    else:
+    elif:
         st.link_button("🔗 Inscrever-se como Banca", "COLE_LINK_BANCA_AQUI")
     else:
         st.link_button("🔗 Para Orientador - inscrever trabalhos para certificados Banca", "COLE_LINK_BANCA_AQUI")
