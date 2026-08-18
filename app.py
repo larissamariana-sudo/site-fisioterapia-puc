@@ -70,13 +70,11 @@ elif menu == "🎟️ Eventos e Inscrições":
     cat = st.radio("Selecione sua categoria para realizar a inscrição:", ["Participante/Ouvinte", "Apresentador de Trabalho", "Membro da Banca"])
     if cat == "Participante/Ouvinte":
         st.link_button("🔗 Inscrever-se como Ouvinte", "https://forms.gle/Vcrdj9e8KJQ9Qqo76")
-    if cat == "Apresentador de Trabalho":
+    elif cat == "Apresentador de Trabalho":
         st.link_button("🔗 Inscrever-se como Apresentador", "COLE_LINK_APRESENTADOR_AQUI")
-    elif:
-        st.link_button("🔗 Inscrever-se como Banca", "COLE_LINK_BANCA_AQUI")
     else:
-        st.link_button("🔗 Para Orientador - inscrever trabalhos para certificados Banca", "COLE_LINK_BANCA_AQUI")
-
+        st.link_button("🔗 Inscrever-se como Banca", "COLE_LINK_BANCA_AQUI")
+        
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
 elif menu == "✍️ Trabalhos Científicos":
     st.subheader("✍️ Central de Trabalhos Científicos")
