@@ -23,6 +23,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
     "🎟️ Eventos e Inscrições", 
     "✍️ Trabalhos Científicos", 
     "🎓 Certificados e Validação", 
+    "📂 Eventos Anteriores", 
     "💳 Taxa de DOI Individual", 
     "📚 Anais Publicados"
 ])
@@ -106,7 +107,7 @@ elif menu == "✍️ Trabalhos Científicos":
             * **DOI (Opcional):** Autores que desejarem maior rastreabilidade podem optar pela aquisição do registro de DOI.
             
             **INSTRUÇÕES DE FORMATAÇÃO OBRIGATÓRIAS**
-            * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir une linha em branco. 
+            * **Espaçamento:** Entre os tópicos/seções do seu trabalho, inserir uma linha em branco. 
             * **Margens:** Superior e esquerda de 3 cm; inferior e direita de 2 cm.
             * **Alinhamento:** Justificado.
             * **Título:** Alinhado à esquerda, em caixa alta e negrito.
@@ -173,15 +174,12 @@ elif menu == "✍️ Trabalhos Científicos":
                     
                     try:
                         link_planilha = "https://docs.google.com/spreadsheets/d/1X7XoT0ohgtc5DZOw-ezcu0HjPPSaBF-nSrGWOFSVsUY/edit?usp=sharing"
-                        
                         id_planilha = link_planilha.split("/d/")[1].split("/")[0]
                         url_csv = f"https://docs.google.com/spreadsheets/d/{id_planilha}/export?format=csv"
                         
                         df = pd.read_csv(url_csv)
-                        
                         df.columns.values[2] = 'email_col'
                         coluna_email = 'email_col'
-                        
                         coluna_status = next((col for col in df.columns if 'status' in col.lower()), None)
                         
                         df[coluna_email] = df[coluna_email].astype(str).str.strip().str.lower()
@@ -190,7 +188,6 @@ elif menu == "✍️ Trabalhos Científicos":
                         if not resultado.empty:
                             if coluna_status:
                                 status_val = str(resultado.iloc[0][coluna_status]).strip()
-                                
                                 if status_val.lower() == 'nan' or status_val == "":
                                     status_final = "Recebido"
                                 else:
@@ -206,16 +203,15 @@ elif menu == "✍️ Trabalhos Científicos":
                                 st.error("Coluna 'Status' não encontrada na planilha.")
                         else:
                             st.warning("E-mail não encontrado na Coluna C.")
-                            
                     except Exception as e:
                         st.error(f"Erro ao ler planilha: {e}")
                 else:
                     st.error("Por favor, digite um e-mail.")
 
-# --- 4. CERTIFICADOS (EMISSÃO + VALIDAÇÃO) ---
+# --- 4. CERTIFICADOS E VALIDAÇÃO ---
 elif menu == "🎓 Certificados e Validação":
-    st.subheader("🎓 Certificados")
-    tab1, tab2 = st.tabs(["📜 Emitir Certificado", "🛡️ Validar Autenticidade"])
+    st.subheader("🎓 Certificados — Jornada Científica de Fisioterapia")
+    tab1, tab2 = st.tabs(["📜 Emitir Certificado", "🛡️ Validar Autenticidade por Código"])
     
     with tab1:
         st.write("Selecione a categoria para receber seu certificado:")
@@ -223,19 +219,87 @@ elif menu == "🎓 Certificados e Validação":
         st.link_button("📥 Emitir Certificado", "LINK_CERTIFICADOS")
         
     with tab2:
-        st.write("Digite o código de autenticidade (ex: PUCGO-2026-XXXX):")
-        codigo = st.text_input("Código:")
-        if st.button("Validar"):
-            st.info("Aguardando configuração do link da planilha de certificados.")
+        st.write("Insira o **Código de Autenticidade** exclusivo impresso no rodapé do certificado da Jornada Científica para comprovar sua validade:")
+        with st.form("form_validacao_cert"):
+            codigo_digitado = st.text_input("Código de Autenticidade:", placeholder="Ex: PUCGO-2026-XXXX").strip()
+            validar_btn = st.form_submit_button("Verificar Autenticidade")
+            
+            if validar_btn:
+                if codigo_digitado:
+                    try:
+                        # Cole aqui o link da sua planilha de controle de certificados gerados
+                        link_planilha_cert = "COLE_LINK_DA_PLANILHA_DE_CERTIFICADOS_AQUI"
+                        
+                        if "docs.google.com" in link_planilha_cert:
+                            id_c = link_planilha_cert.split("/d/")[1].split("/")[0]
+                            url_c_csv = f"https://docs.google.com/spreadsheets/d/{id_c}/export?format=csv"
+                            
+                            df_c = pd.read_csv(url_c_csv)
+                            df_c.columns = df_c.columns.str.strip().str.lower()
+                            
+                            # Procura a coluna de código/chave na planilha
+                            col_cod = next((c for c in df_c.columns if 'codigo' in c or 'chave' in c or 'autenticidade' in c), None)
+                            
+                            if col_cod:
+                                df_c[col_cod] = df_c[col_cod].astype(str).str.strip().str.lower()
+                                res_c = df_c[df_c[col_cod] == codigo_digitado.lower()]
+                                
+                                if not res_c.empty:
+                                    nome_p = res_c.iloc[0].get('nome', 'Participante')
+                                    st.success("✅ **CERTIFICADO VÁLIDO E AUTÊNTICO!**")
+                                    st.write(f"Este certificado pertence oficialmente a: **{nome_p}** — Jornada Científica de Fisioterapia (PUC Goiás).")
+                                else:
+                                    st.error("❌ **Certificado Inválido ou Falso:** O código informado não consta na base de dados oficial da comissão organizadora.")
+                            else:
+                                st.warning("A planilha precisa ter uma coluna nomeada como 'Codigo' ou 'Chave'.")
+                        else:
+                            st.info("Configure o link da planilha de certificados no código para ativar a consulta automática.")
+                    except Exception as e:
+                        st.error(f"Erro ao consultar base de certificados: {e}")
+                else:
+                    st.error("Por favor, digite o código de autenticidade.")
 
-# --- 5. DOI ---
+# --- 5. EVENTOS ANTERIORES (NOVO) ---
+elif menu == "📂 Eventos Anteriores":
+    mostrar_cabecalho("PORTAL.jpg")
+    st.subheader("📂 Repositório de Eventos Anteriores")
+    st.write("Acesse abaixo os acervos, anais e emissão de certificados de edições passadas do nosso portal de eventos.")
+    
+    tab_ant1, tab_ant2 = st.tabs(["📚 Anais de Anos Anteriores", "📜 Certificados de Anos Anteriores"])
+    
+    with tab_ant1:
+        st.markdown("### 📚 Anais Publicados em Edições Passadas")
+        st.write("Consulte os cadernos de resumos e anais oficiais dos anos anteriores:")
+        st.markdown("""
+        * **Jornada Científica 2025** — [📥 Baixar Anais 2025](COLE_LINK_ANAIS_2025)
+        * **Jornada Científica 2024** — [📥 Baixar Anais 2024](COLE_LINK_ANAIS_2024)
+        """)
+        st.link_button("📥 Acessar Pasta Geral de Anais Anteriores no Drive", "COLE_LINK_PASTA_ANAIS_ANTERIORES")
+        
+    with tab_ant2:
+        st.markdown("### 📜 Consulta de Certificados Anteriores")
+        st.write("Se você participou de edições passadas e precisa recuperar seu certificado, selecione o ano correspondente:")
+        ano_anterior = st.selectbox("Selecione o Ano do Evento:", ["2025", "2024"])
+        
+        with st.form("form_cert_antigos"):
+            email_antigo = st.text_input("Digite seu e-mail cadastrado no evento anterior:")
+            buscar_antigo = st.form_submit_button("Consultar e Baixar Certificado Antigo")
+            
+            if buscar_antigo:
+                if email_antigo:
+                    st.info(f"Buscando histórico para o e-mail: {email_antigo} ({ano_anterior})")
+                    st.link_button("🔗 Abrir Link de Emissão do Ano Selecionado", "COLE_LINK_CERTIFICADOS_ANTERIORES")
+                else:
+                    st.error("Por favor, informe o e-mail.")
+
+# --- 6. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
     st.subheader("💳 Solicitação e Pagamento de DOI Individual")
     st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 15,00).")
     st.info("ℹ️ **Chave PIX:** eventoscientificosc@gmail.com")
     st.link_button("🔗 Link para Solicitação DOI", "https://forms.gle/ZjKAcp7LuK8zFFub8")
 
-# --- 6. ANAIS ---
+# --- 7. ANAIS ---
 elif menu == "📚 Anais Publicados":
     st.subheader("📚 Repositório Oficial de Anais")
     st.link_button("📥 Baixar Anais", "COLE_LINK_PDF_ANAIS_AQUI")
