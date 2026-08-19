@@ -271,15 +271,15 @@ elif menu == "📂 Eventos Anteriores":
         st.markdown("### 📚 Anais Publicados em Edições Passadas")
         st.write("Consulte os cadernos de resumos e anais oficiais dos anos anteriores:")
         st.markdown("""
-        * **Jornada Científica 2025** — [📥 Baixar Anais 2025](COLE_LINK_ANAIS_2025)
-        * **Jornada Científica 2024** — [📥 Baixar Anais 2024](COLE_LINK_ANAIS_2024)
+        * **Jornada Científica EM BREVE** — [📥 Baixar Anais EM BREVE](COLE_LINK_ANAIS_2026)
+        * **Jornada Científica EM BREVE** — [📥 Baixar Anais EM BREVE](COLE_LINK_ANAIS_2027)
         """)
-        st.link_button("📥 Acessar Pasta Geral de Anais Anteriores no Drive", "COLE_LINK_PASTA_ANAIS_ANTERIORES")
+        st.link_button("📥 Acessar Pasta Geral de Anais Anteriores no Drive EM CONTRUÇÃO", "COLE_LINK_PASTA_ANAIS_ANTERIORES")
         
     with tab_ant2:
-        st.markdown("### 📜 Consulta de Certificados Anteriores")
+        st.markdown("### 📜 Consulta de Certificados Anteriores EM CONTRUÇÃO")
         st.write("Se você participou de edições passadas e precisa recuperar seu certificado, selecione o ano correspondente:")
-        ano_anterior = st.selectbox("Selecione o Ano do Evento:", ["2025", "2024"])
+        ano_anterior = st.selectbox("Selecione o Ano do Evento:", ["20XX", "20XX"])
         
         with st.form("form_cert_antigos"):
             email_antigo = st.text_input("Digite seu e-mail cadastrado no evento anterior:")
