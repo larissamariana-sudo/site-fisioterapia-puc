@@ -215,7 +215,7 @@ elif menu == "🎓 Certificados e Validação":
     
     with tab1:
         st.write("Selecione a categoria para receber seu certificado:")
-        cat_cert = st.selectbox("Categoria:", ["Ouvinte (16h)", "Apresentador (5h)", "Banca Avaliadora"])
+        cat_cert = st.selectbox("Categoria:", ["Ouvinte (16h)", "Apresentador (16h)", "Banca Avaliadora (16h)"])
         st.link_button("📥 Emitir Certificado", "LINK_CERTIFICADOS")
         
     with tab2:
