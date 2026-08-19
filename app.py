@@ -73,11 +73,11 @@ elif menu == "🎟️ Eventos e Inscrições":
     ])
     
     if cat == "Participante/Ouvinte":
-        st.link_button("🔗 Inscrever-se como Ouvinte", "https://forms.gle/Vcrdj9e8KJQ9Qqo76")
+        st.link_button("🔗 Inscrever-se como Ouvinte", "https://forms.gle/3q9LWnYiv3AdwiiM6")
     elif cat == "Apresentador de Trabalho":
-        st.link_button("🔗 Inscrever-se como Apresentador", "https://forms.gle/mgLc9iaibDfBYqi78")
+        st.link_button("🔗 Inscrever-se como Apresentador", "https://forms.gle/3q9LWnYiv3AdwiiM6")
     elif cat == "Membro da Banca":
-        st.link_button("🔗 Inscrever-se como Banca", "https://forms.gle/mgLc9iaibDfBYqi78")
+        st.link_button("🔗 Inscrever-se como Banca", "https://forms.gle/3q9LWnYiv3AdwiiM6")
     else:
         st.info("⚠️ **Exclusivo para Orientadores:** Utilize este formulário para cadastrar o trabalho, estudante e banca para o certificado.")
         st.link_button("📝 Cadastrar Informações do Trabalho", "https://forms.gle/bTGR48dU3rrgBgr17")
@@ -228,7 +228,7 @@ elif menu == "🎓 Certificados e Validação":
                 if codigo_digitado:
                     try:
                         # Cole aqui o link da sua planilha de controle de certificados gerados
-                        link_planilha_cert = "COLE_LINK_DA_PLANILHA_DE_CERTIFICADOS_AQUI"
+                        link_planilha_cert = "https://docs.google.com/spreadsheets/d/15D_Vay3AQDUrbmaHjgwTeg0irLHX5q2pw6sw_wtiDl0/edit?usp=sharing"
                         
                         if "docs.google.com" in link_planilha_cert:
                             id_c = link_planilha_cert.split("/d/")[1].split("/")[0]
