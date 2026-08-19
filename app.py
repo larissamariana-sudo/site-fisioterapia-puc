@@ -215,7 +215,7 @@ elif menu == "🎓 Certificados e Validação":
     
     with tab1:
         st.write("Selecione a categoria para receber seu certificado:")
-        cat_cert = st.selectbox("Categoria:", ["Ouvinte (16h)", "Apresentador (16h)", "Banca Avaliadora (16h)"])
+        cat_cert = st.selectbox("Categoria:", ["Ouvinte", "Apresentador", "Banca Avaliadora"])
         st.link_button("📥 Emitir Certificado", "LINK_CERTIFICADOS")
         
     with tab2:
@@ -295,7 +295,7 @@ elif menu == "📂 Eventos Anteriores":
 # --- 6. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
     st.subheader("💳 Solicitação e Pagamento de DOI Individual")
-    st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 15,00).")
+    st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 20,00).")
     st.info("ℹ️ **Chave PIX:** eventoscientificosc@gmail.com")
     st.link_button("🔗 Link para Solicitação DOI", "https://forms.gle/ZjKAcp7LuK8zFFub8")
 
