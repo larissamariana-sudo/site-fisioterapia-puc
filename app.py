@@ -352,4 +352,4 @@ elif menu == "📚 Anais Publicados":
 
 # --- RODAPÉ ---
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray;'>Tecnologias • Saúde e Sociedade FST Fisioterapia | PUC Goiás</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray;'>Tecnologias • Humanidades • Saúde e Sociedade</p>", unsafe_allow_html=True)
