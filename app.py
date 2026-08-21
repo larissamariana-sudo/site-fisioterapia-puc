@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(
-    page_title="Eventos Científicos | Saúde, Humanidades e Áreas Afins",
+    page_title="Eventos Científicos | Saúde • Sociedade • Tecnologias • Humanidades • Áreas Afins",
     page_icon="🩺",
     layout="wide"
 )
@@ -25,7 +25,7 @@ def mostrar_cabecalho(foto="capa.png"):
     st.image(foto, use_container_width=True)
     st.markdown("""
         <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
-            <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Humanidades e Áreas Afins</h1>
+            <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Sociedade, Tecnologias, Humanidades e Áreas Afins</h1>
         </div>
     """, unsafe_allow_html=True)
     st.write("")
@@ -44,7 +44,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
     mostrar_cabecalho("capa.png")
-    st.subheader("Bem-vindo ao Portal de Eventos Científicos na Saúde, Humanidades e Áreas Afins")
+    st.subheader("Bem-vindo ao Portal de Eventos Científicos na Eventos Científicos na Saúde, Sociedade, Tecnologias, Humanidades e Áreas Afins")
     st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
     st.markdown("""
     * **Inscrições:** Gratuitas para PUC Goiás / Pagas (Standby) para externos mediante envio de comprovante.
@@ -352,4 +352,4 @@ elif menu == "📚 Anais Publicados":
 
 # --- RODAPÉ ---
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray;'>Tecnologias • Humanidades • Saúde e Sociedade</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray;'>Saúde, Sociedade, Tecnologias, Humanidades e Áreas Afins</p>", unsafe_allow_html=True)
