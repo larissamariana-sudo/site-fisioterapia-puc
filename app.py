@@ -7,11 +7,25 @@ st.set_page_config(
     layout="wide"
 )
 
+# --- ESTILIZAÇÃO CSS PROFISSIONAL ---
+st.markdown("""
+    <style>
+    /* Fundo geral da página mais limpo e profissional */
+    .stApp {
+        background-color: #f8f9fa;
+    }
+    /* Estilização para caixas de texto/destaque */
+    .element-container {
+        color: #333333;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # --- FUNÇÕES DE ESTILO ---
-def mostrar_cabecalho(foto="PORTAL.jpg"):
+def mostrar_cabecalho(foto="capa.png"):
     st.image(foto, use_container_width=True)
     st.markdown("""
-        <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white;'>
+        <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
             <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Humanidades e Áreas Afins</h1>
         </div>
     """, unsafe_allow_html=True)
@@ -30,7 +44,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
-    mostrar_cabecalho("PORTAL.jpg")
+    mostrar_cabecalho("capa.png")
     st.subheader("Bem-vindo ao Portal de Eventos Científicos na Saúde, Humanidades e Áreas Afins")
     st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
     st.markdown("""
@@ -41,7 +55,8 @@ if menu == "🏠 Início / Sobre":
 
 # --- 2. EVENTOS E INSCRIÇÕES ---
 elif menu == "🎟️ Eventos e Inscrições":
-    mostrar_cabecalho("PORTAL.jpg")
+    # Logo do site aparece na página geral de inscrições
+    mostrar_cabecalho("capa.png")
     st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
     st.write("Selecione abaixo o evento de seu interesse para ver os detalhes e realizar a inscrição.")
     
@@ -49,11 +64,13 @@ elif menu == "🎟️ Eventos e Inscrições":
         "1. Jornada Científica do Curso de Fisioterapia", 
         "2. Minicurso Prático: Reabilitação e Terapia Manual", 
         "3. Workshop: Inovação e Tecnologias em Saúde",
-        "4. Simpósio de Saúde Coletiva e Políticas Públicas"
+        "4. Simpósio de Saúde Coletiva e Políticas Públicas",
+        "5. Encontro Científico de Acadêmicos de Fisioterapia"
     ])
     
     st.markdown("---")
     
+    # Logos de eventos específicos aparecem SOMENTE ao selecionar o evento correspondente
     if "Jornada Científica" in evento_selecionado:
         st.image("logo_jornada.png.jpg", use_container_width=True)
         st.markdown("### 🩺 Jornada Científica do Curso de Fisioterapia")
@@ -67,7 +84,27 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.markdown("### **EIXOS TEMÁTICOS**")
         st.write("**Fisioterapia Musculo Esquelética, Neurológica, Cardiorrespiratória, Terapia Intensiva, Geriatria e Gerontologia, Saúde da Mulher, Saúde Coletiva, Tecnologias e Inteligência Artificial na Saúde e Outras Áreas.**")
         st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby** até a validação do comprovante.")
+        
+    elif "Minicurso Prático" in evento_selecionado:
+        st.markdown("### 🤲 Minicurso Prático: Reabilitação e Terapia Manual")
+        st.write("Detalhes e práticas avançadas em terapia manual para acadêmicos e profissionais.")
+        
+    elif "Workshop" in evento_selecionado:
+        st.markdown("### 💡 Workshop: Inovação e Tecnologias em Saúde")
+        st.write("Discussão sobre novas tecnologias e o futuro da reabilitação e saúde.")
+        
+    elif "Simpósio de Saúde Coletiva" in evento_selecionado:
+        st.markdown("### 📊 Simpósio de Saúde Coletiva e Políticas Públicas")
+        st.write("Debates e mesas-redondas sobre o impacto das políticas públicas na saúde.")
+        
+    elif "Encontro Científico" in evento_selecionado:
+        st.markdown("### 🎓 Encontro Científico de Acadêmicos de Fisioterapia")
+        st.write("""
+        * **Foco:** Integração científica dos acadêmicos da graduação.
+        * **Investimento:** Gratuito para a comunidade acadêmica da FST.
+        """)
     
+    st.markdown("---")
     cat = st.radio("Selecione a opção desejada:", [
         "Participante/Ouvinte", "Apresentador de Trabalho", "Membro da Banca", "Cadastro de Trabalho para Certificação (Orientador)"
     ])
@@ -227,7 +264,6 @@ elif menu == "🎓 Certificados e Validação":
             if validar_btn:
                 if codigo_digitado:
                     try:
-                        # Cole aqui o link da sua planilha de controle de certificados gerados
                         link_planilha_cert = "https://docs.google.com/spreadsheets/d/15D_Vay3AQDUrbmaHjgwTeg0irLHX5q2pw6sw_wtiDl0/edit?usp=sharing"
                         
                         if "docs.google.com" in link_planilha_cert:
@@ -237,7 +273,6 @@ elif menu == "🎓 Certificados e Validação":
                             df_c = pd.read_csv(url_c_csv)
                             df_c.columns = df_c.columns.str.strip().str.lower()
                             
-                            # Procura a coluna de código/chave na planilha
                             col_cod = next((c for c in df_c.columns if 'codigo' in c or 'chave' in c or 'autenticidade' in c), None)
                             
                             if col_cod:
@@ -259,7 +294,7 @@ elif menu == "🎓 Certificados e Validação":
                 else:
                     st.error("Por favor, digite o código de autenticidade.")
 
-# --- 5. EVENTOS ANTERIORES (NOVO) ---
+# --- 5. EVENTOS ANTERIORES ---
 elif menu == "📂 Eventos Anteriores":
     mostrar_cabecalho("PORTAL.jpg")
     st.subheader("📂 Repositório de Eventos Anteriores")
@@ -274,10 +309,10 @@ elif menu == "📂 Eventos Anteriores":
         * **Jornada Científica EM BREVE** — [📥 Baixar Anais EM BREVE](COLE_LINK_ANAIS_2026)
         * **Jornada Científica EM BREVE** — [📥 Baixar Anais EM BREVE](COLE_LINK_ANAIS_2027)
         """)
-        st.link_button("📥 Acessar Pasta Geral de Anais Anteriores no Drive EM CONTRUÇÃO", "COLE_LINK_PASTA_ANAIS_ANTERIORES")
+        st.link_button("📥 Acessar Pasta Geral de Anais Anteriores no Drive EM CONSTRUÇÃO", "COLE_LINK_PASTA_ANAIS_ANTERIORES")
         
     with tab_ant2:
-        st.markdown("### 📜 Consulta de Certificados Anteriores EM CONTRUÇÃO")
+        st.markdown("### 📜 Consulta de Certificados Anteriores EM CONSTRUÇÃO")
         st.write("Se você participou de edições passadas e precisa recuperar seu certificado, selecione o ano correspondente:")
         ano_anterior = st.selectbox("Selecione o Ano do Evento:", ["20XX", "20XX"])
         
