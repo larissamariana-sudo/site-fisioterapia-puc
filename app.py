@@ -14,7 +14,6 @@ st.markdown("""
     .stApp {
         background-color: #f8f9fa;
     }
-    /* Estilização para caixas de texto/destaque */
     .element-container {
         color: #333333;
     }
@@ -22,7 +21,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- FUNÇÕES DE ESTILO ---
-def mostrar_cabecalho(foto="capa.png"):
+def mostrar_cabecalho(foto="PORTAL.jpg"):
     st.image(foto, use_container_width=True)
     st.markdown("""
         <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
@@ -44,7 +43,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
-    mostrar_cabecalho("capa.png")
+    mostrar_cabecalho("PORTAL.jpg")
     st.subheader("Bem-vindo ao Portal de Eventos Científicos na Saúde, Humanidades e Áreas Afins")
     st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
     st.markdown("""
@@ -55,10 +54,9 @@ if menu == "🏠 Início / Sobre":
 
 # --- 2. EVENTOS E INSCRIÇÕES ---
 elif menu == "🎟️ Eventos e Inscrições":
-    # Logo do site aparece na página geral de inscrições
-    mostrar_cabecalho("capa.png")
+    mostrar_cabecalho("PORTAL.jpg")
     st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
-    st.write("Selecione abaixo o evento de seu interesse para ver os detalhes e realizar a inscrição.")
+    st.write("Selecione abaixo o evento de seu interesse para ver os detalhes, consultar a programação e realizar a inscrição.")
     
     evento_selecionado = st.selectbox("Escolha o Evento:", [
         "1. Jornada Científica do Curso de Fisioterapia", 
@@ -70,7 +68,7 @@ elif menu == "🎟️ Eventos e Inscrições":
     
     st.markdown("---")
     
-    # Logos de eventos específicos aparecem SOMENTE ao selecionar o evento correspondente
+    # Detalhes específicos de cada evento com sua respectiva programação
     if "Jornada Científica" in evento_selecionado:
         st.image("logo_jornada.png.jpg", use_container_width=True)
         st.markdown("### 🩺 Jornada Científica do Curso de Fisioterapia")
@@ -85,17 +83,28 @@ elif menu == "🎟️ Eventos e Inscrições":
         st.write("**Fisioterapia Musculo Esquelética, Neurológica, Cardiorrespiratória, Terapia Intensiva, Geriatria e Gerontologia, Saúde da Mulher, Saúde Coletiva, Tecnologias e Inteligência Artificial na Saúde e Outras Áreas.**")
         st.warning("⚠️ **Atenção para inscrições pagas:** Ficarão em status de **Standby** até a validação do comprovante.")
         
+        st.markdown("---")
+        st.markdown("#### 📅 Programação do Evento")
+        st.write("Consulte os horários, palestras e mesas-redondas programadas:")
+        st.link_button("📅 Ver / Baixar Programação da Jornada", "COLE_LINK_PROGRAMACAO_JORNADA")
+        
     elif "Minicurso Prático" in evento_selecionado:
         st.markdown("### 🤲 Minicurso Prático: Reabilitação e Terapia Manual")
         st.write("Detalhes e práticas avançadas em terapia manual para acadêmicos e profissionais.")
+        st.markdown("#### 📅 Programação do Evento")
+        st.link_button("📅 Ver / Baixar Programação do Minicurso", "COLE_LINK_PROGRAMACAO_MINICURSO")
         
     elif "Workshop" in evento_selecionado:
         st.markdown("### 💡 Workshop: Inovação e Tecnologias em Saúde")
         st.write("Discussão sobre novas tecnologias e o futuro da reabilitação e saúde.")
+        st.markdown("#### 📅 Programação do Evento")
+        st.link_button("📅 Ver / Baixar Programação do Workshop", "COLE_LINK_PROGRAMACAO_WORKSHOP")
         
     elif "Simpósio de Saúde Coletiva" in evento_selecionado:
         st.markdown("### 📊 Simpósio de Saúde Coletiva e Políticas Públicas")
         st.write("Debates e mesas-redondas sobre o impacto das políticas públicas na saúde.")
+        st.markdown("#### 📅 Programação do Evento")
+        st.link_button("📅 Ver / Baixar Programação do Simpósio", "COLE_LINK_PROGRAMACAO_SIMPOSIO")
         
     elif "Encontro Científico" in evento_selecionado:
         st.markdown("### 🎓 Encontro Científico de Acadêmicos de Fisioterapia")
@@ -103,9 +112,11 @@ elif menu == "🎟️ Eventos e Inscrições":
         * **Foco:** Integração científica dos acadêmicos da graduação.
         * **Investimento:** Gratuito para a comunidade acadêmica da FST.
         """)
+        st.markdown("#### 📅 Programação do Evento")
+        st.link_button("📅 Ver / Baixar Programação do Encontro", "COLE_LINK_PROGRAMACAO_ENCONTRO")
     
     st.markdown("---")
-    cat = st.radio("Selecione a opção desejada:", [
+    cat = st.radio("Selecione a opção desejada para inscrição:", [
         "Participante/Ouvinte", "Apresentador de Trabalho", "Membro da Banca", "Cadastro de Trabalho para Certificação (Orientador)"
     ])
     
@@ -312,7 +323,7 @@ elif menu == "📂 Eventos Anteriores":
         st.link_button("📥 Acessar Pasta Geral de Anais Anteriores no Drive EM CONSTRUÇÃO", "COLE_LINK_PASTA_ANAIS_ANTERIORES")
         
     with tab_ant2:
-        st.markdown("### 📜 Consulta de Certificados Anteriores EM CONSTRUÇÃO")
+        st.markdown("### 📜 Consulta de Certificados Anteriores EM CONTRUÇÃO")
         st.write("Se você participou de edições passadas e precisa recuperar seu certificado, selecione o ano correspondente:")
         ano_anterior = st.selectbox("Selecione o Ano do Evento:", ["20XX", "20XX"])
         
