@@ -20,13 +20,17 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- FUNÇÕES DE ESTILO ---
+# --- FUNÇÕES DE ESTILO (Com imagem menor e centralizada) ---
 def mostrar_cabecalho(foto="capa0.jpg"):
-    # Defina a largura desejada, por exemplo, 800 pixels (ou o tamanho que preferir)
-    st.image(foto, width=500)
+    # Criamos 3 colunas para empurrar a imagem para o centro (a coluna do meio fica com o conteúdo)
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        # O parâmetro width define o tamanho (ex: 600 pixels). Ajuste se quiser menor (ex: 400) ou maior.
+        st.image(foto, width=600)
+    
     st.markdown("""
         <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
-            <h1 style='margin:0; font-size: 26px;'>Science Nexus Plataforma | Saúde • Sociedade • Tecnologias • Humanidades</h1>
+            <h1 style='margin:0; font-size: 26px;'>Eventos Científicos na Saúde, Sociedade, Tecnologias, Humanidades</h1>
         </div>
     """, unsafe_allow_html=True)
     st.write("")
