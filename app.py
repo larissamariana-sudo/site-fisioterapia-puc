@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 st.set_page_config(
-    page_title="Eventos Científicos | Saúde • Sociedade • Tecnologias • Humanidades",
+    page_title="Science Nexus Plataforma | Saúde • Sociedade • Tecnologias • Humanidades",
     page_icon="🩺",
     layout="wide"
 )
@@ -54,7 +54,7 @@ if menu == "🏠 Início / Sobre":
 
 # --- 2. EVENTOS E INSCRIÇÕES ---
 elif menu == "🎟️ Eventos e Inscrições":
-    mostrar_cabecalho("capa.png")
+    mostrar_cabecalho("PORTAL.jpg")
     st.subheader("🎟️ Programação de Eventos e Cursos Disponíveis")
     st.write("Selecione abaixo o evento de seu interesse para ver os detalhes, consultar a programação e realizar a inscrição.")
     
@@ -307,7 +307,7 @@ elif menu == "🎓 Certificados e Validação":
 
 # --- 5. EVENTOS ANTERIORES ---
 elif menu == "📂 Eventos Anteriores":
-    mostrar_cabecalho("PORTAL.jpg")
+    mostrar_cabecalho("capa.png")
     st.subheader("📂 Repositório de Eventos Anteriores")
     st.write("Acesse abaixo os acervos, anais e emissão de certificados de edições passadas do nosso portal de eventos.")
     
