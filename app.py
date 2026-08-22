@@ -30,15 +30,16 @@ def mostrar_cabecalho(foto="capa0.jpg"):
     """, unsafe_allow_html=True)
     st.write("")
 
-# --- MENU ---
+# --- MENU (Sequência atualizada com "Eventos Anteriores" e "Contato" no final) ---
 menu = st.sidebar.selectbox("Navegue pelo Portal:", [
     "🏠 Início / Sobre", 
     "🎟️ Eventos e Inscrições", 
     "✍️ Trabalhos Científicos", 
     "🎓 Certificados e Validação", 
-    "📂 Eventos Anteriores", 
     "💳 Taxa de DOI Individual", 
-    "📚 Anais Publicados"
+    "📚 Anais Publicados",
+    "📂 Eventos Anteriores",
+    "📞 Contato"
 ])
 
 # --- 1. INÍCIO ---
@@ -305,7 +306,19 @@ elif menu == "🎓 Certificados e Validação":
                 else:
                     st.error("Por favor, digite o código de autenticidade.")
 
-# --- 5. EVENTOS ANTERIORES ---
+# --- 5. DOI ---
+elif menu == "💳 Taxa de DOI Individual":
+    st.subheader("💳 Solicitação e Pagamento de DOI Individual")
+    st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 20,00).")
+    st.info("ℹ️ **Chave PIX:** eventoscientificosc@gmail.com")
+    st.link_button("🔗 Link para Solicitação DOI", "https://forms.gle/ZjKAcp7LuK8zFFub8")
+
+# --- 6. ANAIS ---
+elif menu == "📚 Anais Publicados":
+    st.subheader("📚 Repositório Oficial de Anais")
+    st.link_button("📥 Baixar Anais", "COLE_LINK_PDF_ANAIS_AQUI")
+
+# --- 7. EVENTOS ANTERIORES (Movido para o final) ---
 elif menu == "📂 Eventos Anteriores":
     mostrar_cabecalho("capa.png")
     st.subheader("📂 Repositório de Eventos Anteriores")
@@ -338,17 +351,13 @@ elif menu == "📂 Eventos Anteriores":
                 else:
                     st.error("Por favor, informe o e-mail.")
 
-# --- 6. DOI ---
-elif menu == "💳 Taxa de DOI Individual":
-    st.subheader("💳 Solicitação e Pagamento de DOI Individual")
-    st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 20,00).")
-    st.info("ℹ️ **Chave PIX:** eventoscientificosc@gmail.com")
-    st.link_button("🔗 Link para Solicitação DOI", "https://forms.gle/ZjKAcp7LuK8zFFub8")
-
-# --- 7. ANAIS ---
-elif menu == "📚 Anais Publicados":
-    st.subheader("📚 Repositório Oficial de Anais")
-    st.link_button("📥 Baixar Anais", "COLE_LINK_PDF_ANAIS_AQUI")
+# --- 8. CONTATO (Novo espaço adicionado) ---
+elif menu == "📞 Contato":
+    st.subheader("📞 Fale Conosco")
+    st.write("Entre em contato com a comissão organizadora para dúvidas sobre submissões, inscrições ou certificados.")
+    st.markdown("---")
+    st.info("📧 **E-mail oficial de suporte:** eventoscientificosc@gmail.com")
+    st.write("Nossa equipe responderá sua mensagem em até 48 horas úteis.")
 
 # --- RODAPÉ ---
 st.markdown("---")
