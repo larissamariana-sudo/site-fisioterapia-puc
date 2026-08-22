@@ -22,7 +22,8 @@ st.markdown("""
 
 # --- FUNÇÕES DE ESTILO ---
 def mostrar_cabecalho(foto="capa0.jpg"):
-    st.image(foto, use_container_width=True)
+    # Defina a largura desejada, por exemplo, 800 pixels (ou o tamanho que preferir)
+    st.image(foto, width=800)
     st.markdown("""
         <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
             <h1 style='margin:0; font-size: 26px;'>Science Nexus Plataforma | Saúde • Sociedade • Tecnologias • Humanidades</h1>
