@@ -20,12 +20,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- FUNÇÕES DE ESTILO (Com imagem menor e centralizada) ---
+# --- FUNÇÕES DE ESTILO (Imagem menor, centralizada e aplicada em todas as abas) ---
 def mostrar_cabecalho(foto="capa0.jpg"):
-    # Criamos 3 colunas para empurrar a imagem para o centro (a coluna do meio fica com o conteúdo)
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        # O parâmetro width define o tamanho (ex: 600 pixels). Ajuste se quiser menor (ex: 400) ou maior.
         st.image(foto, width=600)
     
     st.markdown("""
@@ -35,7 +33,7 @@ def mostrar_cabecalho(foto="capa0.jpg"):
     """, unsafe_allow_html=True)
     st.write("")
 
-# --- MENU (Sequência atualizada com "Eventos Anteriores" e "Contato" no final) ---
+# --- MENU ---
 menu = st.sidebar.selectbox("Navegue pelo Portal:", [
     "🏠 Início / Sobre", 
     "🎟️ Eventos e Inscrições", 
@@ -50,7 +48,7 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
     mostrar_cabecalho("capa0.jpg")
-    st.subheader("Bem-vindo à Science Nexus Plataforma | Saúde • Sociedade • Tecnologias • Humanidades")
+    st.subheader("Bem-vindo à Science Nexus, Plataforma de Eventos Científicos na Saúde, Sociedade, Tecnologias, Humanidades")
     st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
     st.markdown("""
     * **Inscrições:** Gratuitas para PUC Goiás / Pagas (Standby) para externos mediante envio de comprovante.
@@ -69,14 +67,13 @@ elif menu == "🎟️ Eventos e Inscrições":
         "2. Minicurso Prático: Reabilitação e Terapia Manual", 
         "3. Workshop: Inovação e Tecnologias em Saúde",
         "4. Simpósio de Saúde Coletiva e Políticas Públicas",
-        "5. Encontro Científico Virtual"
+        "5. Encontro Científico Docente"
     ])
     
     st.markdown("---")
     
-    # Detalhes específicos de cada evento com sua respectiva programação
     if "Jornada Científica" in evento_selecionado:
-        st.image("logo_jornada.png.jpg", use_container_width=True)
+        st.image("logo_jornada.png.jpg", width=400)
         st.markdown("### 🩺 Jornada Científica do Curso de Fisioterapia")
         st.write("""
         * **Público-alvo:** Estudantes, docentes, profissionais e pesquisadores.
@@ -138,6 +135,7 @@ elif menu == "🎟️ Eventos e Inscrições":
 
 # --- 3. TRABALHOS (SUBMISSÃO + STATUS) ---
 elif menu == "✍️ Trabalhos Científicos":
+    mostrar_cabecalho("capa0.jpg")
     st.subheader("✍️ Central de Trabalhos Científicos")
     st.write("Consulte abaixo as normas e utilize o link do formulário exclusivo para enviar o seu arquivo Word (.doc/.docx).")
     
@@ -264,6 +262,7 @@ elif menu == "✍️ Trabalhos Científicos":
 
 # --- 4. CERTIFICADOS E VALIDAÇÃO ---
 elif menu == "🎓 Certificados e Validação":
+    mostrar_cabecalho("capa0.jpg")
     st.subheader("🎓 Certificados — Jornada Científica de Fisioterapia")
     tab1, tab2 = st.tabs(["📜 Emitir Certificado", "🛡️ Validar Autenticidade por Código"])
     
@@ -313,6 +312,7 @@ elif menu == "🎓 Certificados e Validação":
 
 # --- 5. DOI ---
 elif menu == "💳 Taxa de DOI Individual":
+    mostrar_cabecalho("capa0.jpg")
     st.subheader("💳 Solicitação e Pagamento de DOI Individual")
     st.write("A publicação nos Anais oficiais com ISBN é gratuita. O DOI individual é opcional (R$ 20,00).")
     st.info("ℹ️ **Chave PIX:** eventoscientificosc@gmail.com")
@@ -320,12 +320,13 @@ elif menu == "💳 Taxa de DOI Individual":
 
 # --- 6. ANAIS ---
 elif menu == "📚 Anais Publicados":
+    mostrar_cabecalho("capa0.jpg")
     st.subheader("📚 Repositório Oficial de Anais")
     st.link_button("📥 Baixar Anais", "COLE_LINK_PDF_ANAIS_AQUI")
 
-# --- 7. EVENTOS ANTERIORES (Movido para o final) ---
+# --- 7. EVENTOS ANTERIORES ---
 elif menu == "📂 Eventos Anteriores":
-    mostrar_cabecalho("capa.png")
+    mostrar_cabecalho("capa0.jpg")
     st.subheader("📂 Repositório de Eventos Anteriores")
     st.write("Acesse abaixo os acervos, anais e emissão de certificados de edições passadas do nosso portal de eventos.")
     
@@ -356,8 +357,9 @@ elif menu == "📂 Eventos Anteriores":
                 else:
                     st.error("Por favor, informe o e-mail.")
 
-# --- 8. CONTATO (Novo espaço adicionado) ---
+# --- 8. CONTATO ---
 elif menu == "📞 Contato":
+    mostrar_cabecalho("capa0.jpg")
     st.subheader("📞 Fale Conosco")
     st.write("Entre em contato com a comissão organizadora para dúvidas sobre submissões, inscrições ou certificados.")
     st.markdown("---")
@@ -366,4 +368,4 @@ elif menu == "📞 Contato":
 
 # --- RODAPÉ ---
 st.markdown("---")
-st.markdown("<p style='text-align: center; color: gray;'>Science Nexus Plataforma | Saúde • Sociedade • Tecnologias • Humanidades</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: gray;'>Saúde, Sociedade, Tecnologias, Humanidades</p>", unsafe_allow_html=True)
