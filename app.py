@@ -21,7 +21,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- FUNÇÕES DE ESTILO ---
-def mostrar_cabecalho(foto="capa.png"):
+def mostrar_cabecalho(foto="capa.jpg"):
     st.image(foto, use_container_width=True)
     st.markdown("""
         <div style='background-color: #004225; padding: 25px; border-radius: 10px; text-align: center; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1);'>
@@ -43,8 +43,8 @@ menu = st.sidebar.selectbox("Navegue pelo Portal:", [
 
 # --- 1. INÍCIO ---
 if menu == "🏠 Início / Sobre":
-    mostrar_cabecalho("capa.png")
-    st.subheader("Bem-vindo ao Portal de Eventos Científicos na Eventos Científicos na Saúde, Sociedade, Tecnologias, Humanidades")
+    mostrar_cabecalho("capa.jpg")
+    st.subheader("Bem-vindo à Science Nexus, Plataforma de Eventos Científicos na Saúde, Sociedade, Tecnologias, Humanidades")
     st.write("Central oficial de gestão acadêmica, submissão de resumos, acompanhamento de avaliação e publicação de anais.")
     st.markdown("""
     * **Inscrições:** Gratuitas para PUC Goiás / Pagas (Standby) para externos mediante envio de comprovante.
